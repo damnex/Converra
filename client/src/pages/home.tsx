@@ -32,6 +32,30 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
+              {/* Logo with glow */}
+              <div className="mb-8 flex justify-start">
+                <div className="relative inline-block">
+                  <div
+                    className="absolute inset-0 rounded-2xl opacity-60 blur-2xl transition-opacity duration-500"
+                    style={{
+                      background: "radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.5) 0%, transparent 70%)",
+                      transform: "scale(1.4)",
+                    }}
+                  />
+                  <div
+                    className="relative rounded-2xl p-1 transition-all duration-300 hover:scale-105"
+                    style={{
+                      boxShadow: "0 0 40px rgba(20, 184, 166, 0.4), 0 0 80px rgba(20, 184, 166, 0.2)",
+                    }}
+                  >
+                    <img
+                      src="/logo.png"
+                      alt="Converra"
+                      className="h-14 w-auto object-contain md:h-16 rounded-xl bg-white/5 backdrop-blur-sm"
+                    />
+                  </div>
+                </div>
+              </div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-teal-400 text-sm font-medium mb-6">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
