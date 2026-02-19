@@ -81,6 +81,20 @@ export default {
           busy: "rgb(239 68 68)",
           offline: "rgb(156 163 175)",
         },
+        navy: {
+          DEFAULT: "#0E1E2F",
+          900: "#050b11",
+          800: "#0a1521",
+          700: "#0e1e2f", // Base
+          600: "#162e47",
+          500: "#24466b",
+        },
+        teal: {
+          DEFAULT: "#1FB6A6",
+          500: "#1FB6A6", // Base
+          400: "#3ad1c1",
+          600: "#189487",
+        },
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
