@@ -32,6 +32,13 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <div className="mb-8">
+                <img
+                  src="/logo.jpeg"
+                  alt="Converra"
+                  className="h-14 w-auto object-contain md:h-16 rounded-xl"
+                />
+              </div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-teal-400 text-sm font-medium mb-6">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
