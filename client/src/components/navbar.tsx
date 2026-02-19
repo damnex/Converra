@@ -35,8 +35,8 @@ export function Navbar() {
       <div className="container-padding flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-          <span className={`text-xl font-bold font-display tracking-tight ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
-            Converra
+          <span className={`text-xl font-bold font-display tracking-wide uppercase ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
+            CONVERRA
           </span>
         </Link>
 
