@@ -1,20 +1,16 @@
-import { pgTable, text, serial, timestamp, boolean } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const leads = pgTable("leads", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-  company: text("company").notNull(),
-  message: text("message"),
-  createdAt: timestamp("created_at").defaultNow(),
+export const insertLeadSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("A valid email is required"),
+  company: z.string().min(1, "Company is required"),
+  message: z.string().optional(),
 });
 
-export const insertLeadSchema = createInsertSchema(leads).omit({ 
-  id: true, 
-  createdAt: true 
+export const leadSchema = insertLeadSchema.extend({
+  id: z.number(),
+  createdAt: z.string(),
 });
 
 export type InsertLead = z.infer<typeof insertLeadSchema>;
-export type Lead = typeof leads.$inferSelect;
+export type Lead = z.infer<typeof leadSchema>;

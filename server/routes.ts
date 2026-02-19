@@ -1,16 +1,19 @@
 import type { Express } from "express";
-import { createServer, type Server } from "http";
+import { type Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
-import { db } from "./db";
-import { leads } from "@shared/schema";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
   // Use status codes matching the responses keys in routes.ts!
+
+  app.get(api.leads.list.path, async (_req, res) => {
+    const leadList = await storage.getLeads();
+    res.status(200).json(leadList);
+  });
 
   app.post(api.leads.create.path, async (req, res) => {
     try {
@@ -27,18 +30,6 @@ export async function registerRoutes(
       throw err;
     }
   });
-
-  // Seed data
-  const existingLeads = await db.select().from(leads).limit(1);
-  if (existingLeads.length === 0) {
-    await storage.createLead({
-      name: "John Doe",
-      email: "john@example.com",
-      company: "Acme Corp",
-      message: "Interested in your services",
-    });
-    console.log("Seeded database with initial lead");
-  }
 
   return httpServer;
 }

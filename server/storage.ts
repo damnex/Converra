@@ -1,15 +1,24 @@
-import { db } from "./db";
-import { leads, type InsertLead, type Lead } from "@shared/schema";
+import { type InsertLead, type Lead } from "@shared/schema";
+
+const leads: Lead[] = [];
 
 export interface IStorage {
   createLead(lead: InsertLead): Promise<Lead>;
+  getLeads(): Promise<Lead[]>;
 }
 
-export class DatabaseStorage implements IStorage {
+export const storage: IStorage = {
   async createLead(insertLead: InsertLead): Promise<Lead> {
-    const [lead] = await db.insert(leads).values(insertLead).returning();
+    const lead: Lead = {
+      id: Date.now(),
+      ...insertLead,
+      createdAt: new Date().toISOString(),
+    };
+    leads.push(lead);
     return lead;
-  }
-}
+  },
 
-export const storage = new DatabaseStorage();
+  async getLeads(): Promise<Lead[]> {
+    return leads;
+  },
+};

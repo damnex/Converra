@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertLeadSchema, leads } from './schema';
+import { insertLeadSchema, leadSchema } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -18,8 +18,15 @@ export const api = {
       path: '/api/leads' as const,
       input: insertLeadSchema,
       responses: {
-        201: z.custom<typeof leads.$inferSelect>(),
+        201: leadSchema,
         400: errorSchemas.validation,
+      },
+    },
+    list: {
+      method: 'GET' as const,
+      path: '/api/leads' as const,
+      responses: {
+        200: z.array(leadSchema),
       },
     },
   },
