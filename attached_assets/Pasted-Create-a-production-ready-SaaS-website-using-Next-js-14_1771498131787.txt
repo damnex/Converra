@@ -1,0 +1,198 @@
+Create a production-ready SaaS website using Next.js 14 (App Router) and Tailwind CSS.
+
+Brand Name: Converra
+Tagline: Conversation. Conviction. Conversion.
+Industry: Affiliate-Based Revenue Partner for Tech Companies
+
+Design Requirements:
+- Enterprise SaaS aesthetic
+- Minimal
+- Clean whitespace
+- Navy + Teal color palette
+- No marketing hype visuals
+- No stock images of people
+- Use subtle SVG charts / abstract analytics visuals
+- Smooth fade-in animations
+- Responsive (mobile-first)
+- SEO optimized
+- Accessible (ARIA where needed)
+
+Primary Colors:
+--navy: #0E1E2F
+--teal: #1FB6A6
+--light: #F7F9FC
+--gray-text: #5C6B7A
+
+Font:
+Use Inter from Google Fonts.
+
+Structure:
+
+/app
+  /components
+    Navbar.tsx
+    Footer.tsx
+    Hero.tsx
+    Problem.tsx
+    WhatWeDo.tsx
+    HowItWorks.tsx
+    WhoWeWorkWith.tsx
+    Differentiator.tsx
+    BeyondClose.tsx
+    Trust.tsx
+    FinalCTA.tsx
+  page.tsx
+  layout.tsx
+  globals.css
+
+Navbar:
+- Logo left (use placeholder logo container)
+- Links: How It Works, Solutions, Partner, Contact
+- CTA button: Book Strategy Call
+- Sticky on scroll
+- Subtle shadow
+
+Hero Section:
+Headline:
+Revenue Partners for Tech Companies That Want to Scale — Without Hiring a Bigger Sales Team.
+
+Subheadline:
+Converra is an affiliate-based sales agency.
+We close warm leads, build revenue systems, and grow your sales — on performance.
+
+CTA Buttons:
+Primary: Become a Revenue Partner
+Secondary: Book a Strategy Call
+
+Under CTA small text:
+No retainers. No empty promises. Just shared revenue.
+
+Right side:
+Create a clean SVG animated revenue line chart (subtle animation on load).
+
+Problem Section:
+Headline:
+Startups Don’t Need More Vendors.
+They Need Revenue Partners.
+
+Bullet points:
+- Traffic but low conversions
+- Founder closing sales
+- In-house bandwidth issues
+- Inconsistent revenue
+- Unclear sales process
+
+Minimal line icons next to each bullet.
+
+What We Do:
+Headline:
+Affiliate-Based Sales. Engineered for Growth.
+
+Paragraph explaining integration into CRM and inbound systems.
+
+Bullet list:
+- Warm lead closing
+- WhatsApp & email follow-ups
+- Dedicated sales associates
+- Conversion optimization
+- Retention & expansion strategy
+
+Include mock CRM dashboard UI card component.
+
+How It Works:
+Create 4-step horizontal timeline component.
+
+Steps:
+1. Alignment
+2. Integration
+3. Dedicated Sales Support
+4. Performance-Based Revenue
+
+Each step should have:
+- Circle number
+- Title
+- One-line description
+
+Who We Work With:
+Grid of 6 cards:
+SaaS, Tech Startups, IT Services, EdTech, Digital Products, B2B Services
+
+Hover effect:
+Subtle border highlight in teal.
+
+Differentiator:
+Two-column comparison table.
+
+Left: Traditional Sales Agency
+- Monthly retainers
+- No revenue accountability
+- Generic scripts
+- Limited follow-up
+
+Right: Converra
+- Performance-based
+- Revenue-aligned incentives
+- Dedicated associate
+- Process-driven follow-up
+- Long-term revenue systems
+
+Right side background slightly navy tinted.
+
+Beyond the Close:
+Revenue lifecycle diagram component (SVG):
+Acquire → Close → Retain → Expand
+
+Headline:
+Beyond Closing. Building Revenue Systems.
+
+Trust Section:
+Centered quote:
+“Trusted by founders who want revenue partners — not vendors.”
+
+Placeholder logo row.
+
+Final CTA Section:
+Dark navy background.
+Centered headline:
+Ready to Add a Revenue Partner?
+
+Subheadline:
+Let’s build a sales system that grows with you.
+
+CTA button:
+Book a Revenue Strategy Call
+
+Under button:
+Zero upfront cost. Pure performance.
+
+Footer:
+Logo
+Tagline
+Contact: hello@converra.in
+LinkedIn | Instagram
+Small copyright line.
+
+Animations:
+Use Tailwind + simple CSS transitions.
+Fade-in on scroll using intersection observer.
+
+SEO:
+Add metadata in layout.tsx:
+Title: Converra | Affiliate-Based Revenue Partners
+Description: Performance-based sales partners for tech companies. No retainers. Shared revenue. Engineered growth systems.
+
+Performance:
+- Use optimized SVG instead of heavy images
+- Clean semantic HTML
+- Proper heading hierarchy
+
+Ensure:
+- Fully responsive
+- Mobile navigation collapses into hamburger
+- Buttons have hover effects
+- Professional spacing
+- No placeholder lorem ipsum
+- No generic SaaS filler content
+
+Return:
+Full working project code.
