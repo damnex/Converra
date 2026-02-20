@@ -20,58 +20,59 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-slate-900 overflow-hidden">
+      <div className="relative pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 xl:pt-36 xl:pb-28 bg-slate-900 overflow-hidden">
         {/* Abstract shapes */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-teal-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
 
         <div className="container-padding relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 items-center min-h-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+              className="min-w-0"
             >
-              <div className="mb-8">
+              <div className="mb-5 lg:mb-6">
                 <img
                   src="/logo.jpeg"
                   alt="Converra"
-                  className="h-14 w-auto object-contain md:h-16 rounded-xl"
+                  className="h-12 w-auto object-contain md:h-14 lg:h-14 xl:h-16 rounded-xl"
                 />
               </div>
-              <p className="text-sm font-medium text-teal-400 tracking-wide mb-4">
+              <p className="text-sm font-medium text-teal-400 tracking-wide mb-2 lg:mb-3">
                 Conversation. Conviction. Conversion.
               </p>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-teal-400 text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-teal-400 text-sm font-medium mb-4 lg:mb-5">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
                 </span>
                 Accepting New Partners for Q4
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 font-display">
+              <h1 className="text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-4 lg:mb-5 font-display max-w-xl">
                 Performance-Based Revenue Partners for <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">SaaS & Tech Companies</span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-xl">
+              <p className="text-base md:text-lg lg:text-base xl:text-lg text-slate-400 mb-6 lg:mb-7 leading-relaxed max-w-xl">
                 We convert your warm leads into predictable revenue — aligned with your outcomes.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button 
                   onClick={scrollToContact}
-                  className="h-14 px-8 text-lg bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
+                  className="h-12 px-6 text-base lg:h-12 xl:h-14 xl:px-8 xl:text-lg bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
                 >
                   Book Strategy Call
                 </Button>
                 <Button 
                   variant="outline" 
                   onClick={scrollToContact}
-                  className="h-14 px-8 text-lg border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white bg-transparent"
+                  className="h-12 px-6 text-base lg:h-12 xl:h-14 xl:px-8 xl:text-lg border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white bg-transparent"
                 >
                   Learn More
                 </Button>
               </div>
               
-              <div className="mt-10 flex items-center gap-6 text-sm text-slate-500">
+              <div className="mt-6 lg:mt-8 flex items-center gap-6 text-sm text-slate-500">
                 <div className="flex -space-x-3">
                   {[1,2,3,4].map(i => (
                     <div key={i} className="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-xs text-white">
