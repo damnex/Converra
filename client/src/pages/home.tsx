@@ -39,6 +39,9 @@ export default function Home() {
                   className="h-14 w-auto object-contain md:h-16 rounded-xl"
                 />
               </div>
+              <p className="text-sm font-medium text-teal-400 tracking-wide mb-4">
+                Conversation. Conviction. Conversion.
+              </p>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-teal-400 text-sm font-medium mb-6">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
@@ -47,24 +50,24 @@ export default function Home() {
                 Accepting New Partners for Q4
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 font-display">
-                Revenue Partners for Tech Companies That Want to <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Scale</span>.
+                Performance-Based Revenue Partners for <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">SaaS & Tech Companies</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-xl">
-                Stop struggling with hiring, training, and managing SDRs. We plug into your company as a dedicated revenue engine without the headcount.
+                We convert your warm leads into predictable revenue — aligned with your outcomes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={scrollToContact}
                   className="h-14 px-8 text-lg bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
                 >
-                  Become a Revenue Partner
+                  Book Strategy Call
                 </Button>
                 <Button 
                   variant="outline" 
                   onClick={scrollToContact}
                   className="h-14 px-8 text-lg border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white bg-transparent"
                 >
-                  Book Strategy Call
+                  Learn More
                 </Button>
               </div>
               
@@ -95,29 +98,29 @@ export default function Home() {
       <Section id="problem" className="bg-white">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            The Traditional Sales Model Is Broken
+            Strong Traffic. Weak Conversion.
           </h2>
           <p className="text-lg text-slate-500">
-            Scaling an in-house sales team is expensive, risky, and slow. There's a better way to grow revenue.
+            You have the leads — but turning them into predictable revenue is where most teams get stuck.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              icon: Users,
-              title: "Hiring Headaches",
-              desc: "Finding, training, and retaining top talent takes months and costs a fortune in recruitment fees."
+              icon: BarChart,
+              title: "Low conversion despite strong traffic",
+              desc: "Leads are coming in, but they're not converting. The bottleneck is in your conversion systems, not your marketing."
             },
             {
-              icon: Target,
-              title: "Missed Quotas",
-              desc: "Average ramp time is 3+ months, meaning you burn cash before seeing a single dollar in return."
+              icon: Users,
+              title: "Founder-led sales bottlenecks",
+              desc: "Founders are the best closers, but they can't scale. Sales stalls when every deal depends on one person."
             },
             {
               icon: Zap,
-              title: "Management Drain",
-              desc: "Managing a sales team distracts founders and product leaders from building a great product."
+              title: "Inefficient follow-ups and lost deals",
+              desc: "Leads go cold when follow-up is slow or inconsistent. Lost deals often come down to timing and accountability."
             }
           ].map((item, i) => (
             <div key={i} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-teal-200 transition-colors">
@@ -164,7 +167,7 @@ export default function Home() {
               <div className="space-y-8">
                 {[
                   { step: "01", title: "Strategy & Audit", desc: "We analyze your TAM, messaging, and current sales stack." },
-                  { step: "02", title: "Infrastructure Setup", desc: "We deploy our proprietary tech stack and data enrichment tools." },
+                  { step: "02", title: "Systems Setup", desc: "We deploy our proprietary tech stack and data enrichment tools." },
                   { step: "03", title: "Campaign Launch", desc: "Multi-channel outreach via email, LinkedIn, and phone." },
                   { step: "04", title: "Scale & Optimize", desc: "Continuous A/B testing and doubling down on what works." },
                 ].map((item, i) => (
@@ -207,7 +210,7 @@ export default function Home() {
       </Section>
 
       {/* Comparison Table */}
-      <Section id="differentiator" background="light">
+      <Section id="results" background="light">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Why We Are Different
@@ -222,11 +225,10 @@ export default function Home() {
               <div className="font-bold text-teal-600 text-lg">Converra</div>
             </div>
             {[
-              { feature: "Focus", bad: "Volume-based spam", good: "Targeted, research-backed" },
-              { feature: "Tech Stack", bad: "Basic email tools", good: "Enterprise-grade suite" },
-              { feature: "Pricing", bad: "Retainer + Commission", good: "Performance-aligned" },
-              { feature: "Transparency", bad: "Weekly PDF reports", good: "Live dashboard access" },
-              { feature: "Ramp Time", bad: "4-6 weeks", good: "< 7 days" },
+              { feature: "Retainer Fees", bad: "Yes", good: "No" },
+              { feature: "Revenue Alignment", bad: "No", good: "Yes" },
+              { feature: "Dedicated Associate", bad: "Optional", good: "Assigned" },
+              { feature: "Reporting Transparency", bad: "Limited", good: "Structured" },
             ].map((row, i) => (
               <div key={i} className="grid grid-cols-3 p-6 border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
                 <div className="font-medium text-slate-700">{row.feature}</div>
@@ -272,6 +274,26 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Clients Section */}
+      <Section id="clients" background="light">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Trusted by SaaS & Tech Leaders
+          </h2>
+          <p className="text-lg text-slate-500 mb-12">
+            We partner with companies that are ready for performance-based revenue growth.
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-12 opacity-70">
+            {/* Placeholder for client logos — replace with real logos when provided */}
+            {["Client 1", "Client 2", "Client 3"].map((label, i) => (
+              <div key={i} className="h-12 w-32 bg-slate-200 rounded-lg flex items-center justify-center text-slate-400 text-sm font-medium">
+                {label}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* Contact Section */}
       <Section id="contact" background="navy">
         <div className="grid lg:grid-cols-2 gap-16">
@@ -285,10 +307,10 @@ export default function Home() {
             
             <div className="space-y-6">
               {[
-                "Full audit of your current sales process",
-                "Custom go-to-market strategy roadmap",
-                "Transparent pricing and ROI projection",
-                "No pressure, just value"
+                "Revenue Audit",
+                "Dedicated Associate",
+                "Demo Support Setup",
+                "Monthly Reporting"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">
@@ -327,10 +349,11 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl font-bold text-white font-display">Converra</span>
+                <span className="text-xl font-bold text-white font-display uppercase tracking-wide">Converra</span>
               </div>
-              <p className="max-w-xs text-sm">
-                Helping B2B tech companies scale revenue through data-driven outbound sales partnerships.
+              <p className="text-teal-400 text-sm font-medium mb-2">Conversation. Conviction. Conversion.</p>
+              <p className="max-w-xs text-sm text-slate-400">
+                Performance-based revenue partners for SaaS & tech. We convert warm leads into predictable revenue — no retainers.
               </p>
             </div>
             
@@ -339,7 +362,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-teal-400 transition-colors">About</a></li>
                 <li><a href="#" className="hover:text-teal-400 transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Blog</a></li>
+                <li><a href="#contact" className="hover:text-teal-400 transition-colors">Contact</a></li>
               </ul>
             </div>
             

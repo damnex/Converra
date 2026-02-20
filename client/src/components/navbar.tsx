@@ -42,10 +42,10 @@ export function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          {["Problem", "Solution", "Process", "Results"].map((item) => (
+          {["Problem", "Solution", "Process", "Results", "Clients", "Contact"].map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={item === "Contact" ? "#contact" : `#${item.toLowerCase()}`}
               className="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors"
             >
               {item}
@@ -73,10 +73,10 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent>
               <div className="flex flex-col gap-6 mt-10">
-                {["Problem", "Solution", "Process", "Results"].map((item) => (
+                {["Problem", "Solution", "Process", "Results", "Clients", "Contact"].map((item) => (
                   <a
                     key={item}
-                    href={`#${item.toLowerCase()}`}
+                    href={item === "Contact" ? "#contact" : `#${item.toLowerCase()}`}
                     className="text-lg font-medium text-slate-900"
                   >
                     {item}
