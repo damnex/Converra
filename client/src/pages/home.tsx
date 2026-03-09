@@ -731,7 +731,6 @@ export default function Home() {
                 <li><a href="#features" className="hover:text-teal-400 transition-colors">Features</a></li>
                 <li><a href="#product-preview" className="hover:text-teal-400 transition-colors">Demo</a></li>
                 <li><a href="#process" className="hover:text-teal-400 transition-colors">How it works</a></li>
-                <li><a href="#cta" className="hover:text-teal-400 transition-colors">Pricing</a></li>
               </ul>
             </div>
 

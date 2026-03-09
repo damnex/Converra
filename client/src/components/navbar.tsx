@@ -66,7 +66,6 @@ export function Navbar() {
           {[
             { label: "Features", href: "#features" },
             { label: "How It Works", href: "#process" },
-            { label: "Pricing", href: "#cta" },
             { label: "Contact", href: "#footer-contact" },
           ].map(({ label, href }) => (
             <a
@@ -121,7 +120,7 @@ export function Navbar() {
                   Toggle theme
                 </button>
 
-                {["Features", "How It Works", "Pricing", "Contact"].map((item) => (
+                {["Features", "How It Works", "Contact"].map((item) => (
                   <a
                     key={item}
                     href={
@@ -129,8 +128,6 @@ export function Navbar() {
                         ? "#features"
                         : item === "How It Works"
                         ? "#process"
-                        : item === "Pricing"
-                        ? "#cta"
                         : "#footer-contact"
                     }
                     className="text-lg font-medium text-slate-900 dark:text-slate-100"
