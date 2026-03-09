@@ -47,15 +47,20 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 dark:bg-slate-950/70 backdrop-blur-md shadow-sm py-4 border-b border-gray-100 dark:border-white/10"
-          : "bg-transparent py-6"
+          ? "bg-slate-950/80 backdrop-blur-xl shadow-lg shadow-black/20 py-3 border-b border-white/5"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container-padding flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group cursor-pointer">
+        <Link href="/" className="flex items-center gap-2 group cursor-pointer shrink-0">
+          <img
+            src="/logo.jpeg"
+            alt="Converra"
+            className="h-8 w-auto rounded-lg object-contain"
+          />
           <span
-            className={`text-xl font-bold font-display tracking-wide uppercase ${
+            className={`text-lg font-bold font-display tracking-tight uppercase hidden sm:inline ${
               isScrolled ? "text-slate-900 dark:text-white" : "text-white"
             }`}
           >
@@ -63,19 +68,24 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu - Stripe/Vercel style */}
         <div className="hidden md:flex items-center gap-8">
-          {["Problem", "Solution", "Process", "Results", "Ideal Clients"].map((item) => (
+          {[
+            { label: "Features", href: "#features" },
+            { label: "How It Works", href: "#process" },
+            { label: "Pricing", href: "#cta" },
+            { label: "Contact", href: "#footer-contact" },
+          ].map(({ label, href }) => (
             <a
-              key={item}
-              href={item === "Ideal Clients" ? "#ideal-clients" : `#${item.toLowerCase()}`}
+              key={label}
+              href={href}
               className={`text-sm font-medium transition-colors ${
                 isScrolled
-                  ? "text-slate-600 dark:text-slate-200 hover:text-teal-600"
+                  ? "text-slate-600 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
                   : "text-white/80 hover:text-white"
               }`}
             >
-              {item}
+              {label}
             </a>
           ))}
         </div>
@@ -91,11 +101,11 @@ export function Navbar() {
           >
             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
-          <Button 
+          <Button
             onClick={() => openBookStrategyCall(scrollToContact)}
-            className="bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 transition-all"
+            className="bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transition-all duration-300"
           >
-            Book Strategy Call
+            Get Started
           </Button>
         </div>
 
@@ -118,20 +128,28 @@ export function Navbar() {
                   Toggle theme
                 </button>
 
-                {["Problem", "Solution", "Process", "Results", "Ideal Clients"].map((item) => (
+                {["Features", "How It Works", "Pricing", "Contact"].map((item) => (
                   <a
                     key={item}
-                    href={item === "Ideal Clients" ? "#ideal-clients" : `#${item.toLowerCase()}`}
-                    className="text-lg font-medium text-slate-900"
+                    href={
+                      item === "Features"
+                        ? "#features"
+                        : item === "How It Works"
+                        ? "#process"
+                        : item === "Pricing"
+                        ? "#cta"
+                        : "#footer-contact"
+                    }
+                    className="text-lg font-medium text-slate-900 dark:text-slate-100"
                   >
                     {item}
                   </a>
                 ))}
-                <Button 
+                <Button
                   onClick={() => openBookStrategyCall(scrollToContact)}
-                  className="w-full bg-teal-500 hover:bg-teal-600 text-white"
+                  className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold"
                 >
-                  Book Strategy Call
+                  Get Started
                 </Button>
               </div>
             </SheetContent>

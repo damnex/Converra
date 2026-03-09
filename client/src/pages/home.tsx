@@ -4,7 +4,20 @@ import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
 import { ChartVisual } from "@/components/chart-visual";
 import { DashboardMock } from "@/components/dashboard-mock";
-import { CheckCircle, ArrowRight, TrendingUp, BarChart3, Users } from "lucide-react";
+import { AnimatedCounter } from "@/components/animated-counter";
+import {
+  CheckCircle,
+  ArrowRight,
+  TrendingUp,
+  BarChart3,
+  Users,
+  Target,
+  Zap,
+  ShieldCheck,
+  LayoutGrid,
+  MessageSquare,
+  Star,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { openBookStrategyCall } from "@/lib/links";
 
@@ -14,88 +27,158 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden">
       <Navbar />
 
-      {/* 🟦 HERO SECTION */}
-      <Section
+      {/* HERO — deep blue to black, floating product card */}
+      <section
         id="hero"
-        className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-slate-950 to-slate-900 text-white"
+        className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-b from-blue-950 via-slate-950 to-black text-white"
       >
         <div className="absolute inset-0">
-          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-500/15 blur-[90px]" />
-          <div className="absolute -bottom-28 -left-28 h-[420px] w-[420px] rounded-full bg-teal-500/15 blur-[110px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-teal-500/10 rounded-full blur-[100px]" />
         </div>
 
-        <div className="container-padding relative z-10 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-14 items-center">
+        <div className="container-padding relative z-10 pt-28 pb-20 lg:pt-32 lg:pb-28">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
             >
-              <div className="mb-6 flex justify-center lg:justify-start">
-                <img
-                  src="/logo.jpeg"
-                  alt="CONVERRA GROWTH PARTNERS logo"
-                  className="h-12 w-auto rounded-xl object-contain md:h-14"
-                />
-              </div>
-
-              <p className="text-sm font-medium text-teal-300 tracking-wide mb-4">
+              <p className="text-sm font-medium text-teal-400 tracking-wide mb-4">
                 Conversation. Conviction. Conversion.
               </p>
-
-              <div className="mb-6 flex justify-center lg:justify-start">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-teal-200 backdrop-blur">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                  🟢 Accepting New Partners for Q4
-                </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-200 backdrop-blur mb-6">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                Accepting New Partners for Q4
               </div>
 
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.12] text-white mb-6">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white mb-6">
                 Strategic Revenue Partners for Growth-Focused Companies
               </h1>
 
-              <p className="text-base md:text-lg text-slate-200 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10">
                 We help SaaS and technology businesses turn warm leads into predictable revenue through dedicated sales execution aligned with business outcomes.
               </p>
 
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Button
                   onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-                  className="h-12 px-6 text-base bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
+                  className="h-12 px-8 text-base bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-xl shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300"
                 >
-                  Book Strategy Call
+                  Get Started
                 </Button>
                 <Button
                   variant="outline"
-                  onClick={() => scrollTo("problem")}
-                  className="h-12 px-6 text-base border-white/20 text-white hover:bg-white/10 bg-transparent"
+                  onClick={() => scrollTo("product-preview")}
+                  className="h-12 px-8 text-base border-white/20 text-white hover:bg-white/10 bg-white/5 backdrop-blur transition-all duration-300"
                 >
-                  Learn More
+                  View Demo
                 </Button>
               </div>
 
-              <div className="text-sm text-slate-300">
-                Trusted by growing SaaS/Tech teams to accelerate revenue without expanding internal sales bandwidth.
-              </div>
+              <p className="text-sm text-slate-400">
+                Trusted by growing SaaS & tech teams to accelerate revenue without expanding internal sales bandwidth.
+              </p>
             </motion.div>
 
+            {/* Floating product preview card with graph */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="relative"
             >
-              <ChartVisual />
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-2 shadow-2xl shadow-black/50"
+              >
+                <ChartVisual />
+              </motion.div>
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* FEATURES — glassmorphism grid */}
+      <Section
+        id="features"
+        className="relative bg-gradient-to-b from-black via-slate-950 to-slate-950 text-slate-100"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why partner with Converra
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              Performance-driven revenue partnership built for scale.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Target,
+                title: "Strategic alignment",
+                desc: "Founders and leadership stay focused on product innovation and strategic growth.",
+              },
+              {
+                icon: Users,
+                title: "No bandwidth strain",
+                desc: "Internal teams operate without added pressure or capacity constraints.",
+              },
+              {
+                icon: Zap,
+                title: "Dedicated sales support",
+                desc: "Drive additional revenue streams with a dedicated revenue partner.",
+              },
+              {
+                icon: MessageSquare,
+                title: "Pipeline progression",
+                desc: "Consistent prospect engagement and steady pipeline movement.",
+              },
+              {
+                icon: BarChart3,
+                title: "Measurable outcomes",
+                desc: "Performance-aligned execution focused on accountability and results.",
+              },
+              {
+                icon: LayoutGrid,
+                title: "Scale without hiring",
+                desc: "Scalable growth without the cost and complexity of constant hiring.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                whileHover={{ scale: 1.02 }}
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:shadow-teal-500/10 hover:border-teal-500/20 transition-all duration-300"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/20 text-teal-400 mb-4">
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </Section>
 
-      {/* 🟥 PROBLEM SECTION */}
+      {/* PROBLEM SECTION */}
       <Section
         id="problem"
         className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
@@ -201,78 +284,110 @@ export default function Home() {
             <p>You focus on building the business.</p>
             <p>We focus on expanding its revenue potential.</p>
           </div>
-
-          <div className="mt-12">
-            <DashboardMock />
-          </div>
         </motion.div>
       </Section>
 
-      {/* 🟨 PROCESS SECTION */}
+      {/* PRODUCT PREVIEW — mock UI / dashboard */}
       <Section
-        id="process"
-        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        id="product-preview"
+        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
       >
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-            How We Drive Predictable Revenue Growth
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              See the platform in action
+            </h2>
+            <p className="text-lg text-slate-400 max-w-xl mx-auto">
+              Real-time revenue and pipeline visibility. No spreadsheets, no guesswork.
+            </p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <DashboardMock />
+          </motion.div>
+        </motion.div>
+      </Section>
 
-          <div className="space-y-6">
+      {/* HOW IT WORKS — 4 steps horizontal */}
+      <Section
+        id="process"
+        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              How we drive predictable revenue growth
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              Four steps from alignment to scale.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6 relative">
+            {/* Connecting line (desktop) */}
+            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-teal-500/50 via-teal-500 to-teal-500/50 z-0" />
+
             {[
               {
-                num: "1️⃣",
+                step: "01",
                 title: "Understand & Align",
-                desc: "We begin by developing a deep understanding of your product, target audience, market positioning, and revenue objectives. This alignment ensures every sales initiative reflects your brand value and speaks to the right customers.",
+                desc: "Deep dive into your product, audience, and revenue objectives so every initiative reflects your brand.",
+                icon: Target,
               },
               {
-                num: "2️⃣",
-                title: "Dedicated Sales Ownership",
-                desc: "A trained sales professional is exclusively allocated to your business to represent your offerings in the market. This dedicated ownership ensures focused attention, consistent follow-ups, personalized prospect engagement, and stronger relationship building with potential clients.",
+                step: "02",
+                title: "Dedicated ownership",
+                desc: "A trained sales professional is allocated exclusively to your business for focused execution.",
+                icon: Users,
               },
               {
-                num: "3️⃣",
-                title: "Structured Sales Execution",
-                desc: "Our team manages end-to-end outreach — initiating conversations, nurturing prospects, addressing objections, and driving steady pipeline progression through disciplined execution and proven sales practices.",
+                step: "03",
+                title: "Structured execution",
+                desc: "End-to-end outreach, nurturing, and pipeline progression through proven sales practices.",
+                icon: Zap,
               },
               {
-                num: "4️⃣",
-                title: "Revenue-Focused Collaboration",
-                desc: "We work closely with founders, leadership teams, and internal sales units to ensure our efforts complement existing strategies while unlocking additional revenue channels without disrupting internal workflows.",
+                step: "04",
+                title: "Performance-led growth",
+                desc: "Outcomes-based engagement with accountability and sustained revenue expansion.",
+                icon: TrendingUp,
               },
-              {
-                num: "5️⃣",
-                title: "Campaign & Lead Generation Support",
-                desc: "When required, Converra also supports targeted marketing initiatives such as webinar campaigns, outreach programs, and multi-channel lead generation activities. This enables businesses to access new prospect pools while ensuring a consistent flow of qualified opportunities into the sales pipeline.",
-              },
-              {
-                num: "6️⃣",
-                title: "Performance-Led Growth",
-                desc: "Our engagement model is aligned with measurable outcomes — ensuring accountability, sustained momentum, and mutually beneficial revenue expansion.",
-              },
-            ].map((step) => (
-                <div
-                  key={step.num}
-                  className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl p-6 md:p-8 shadow-lg shadow-black/30"
-                >
-                <div className="flex items-start gap-4">
-                  <div className="text-2xl md:text-3xl leading-none">{step.num}</div>
-                  <div className="min-w-0">
-                    <div className="text-lg md:text-xl font-bold text-white mb-2">
-                      {step.title}
-                    </div>
-                    <div className="text-slate-200 leading-relaxed">
-                      {step.desc}
-                    </div>
+            ].map((item, i) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="relative z-10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center hover:border-teal-500/30 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="flex justify-center mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-500/20 text-teal-400 font-bold text-sm">
+                    {item.step}
                   </div>
                 </div>
-              </div>
+                <div className="flex justify-center mb-3">
+                  <item.icon className="h-6 w-6 text-teal-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -320,21 +435,9 @@ export default function Home() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              {
-                icon: TrendingUp,
-                label: "Lead-to-Close Uplift",
-                value: "+32%",
-              },
-              {
-                icon: BarChart3,
-                label: "Pipeline Consistency",
-                value: "11.4x",
-              },
-              {
-                icon: Users,
-                label: "Warm Leads Activated",
-                value: "3.2x",
-              },
+              { icon: TrendingUp, label: "Lead-to-Close Uplift", value: 32, suffix: "%", prefix: "+" },
+              { icon: BarChart3, label: "Pipeline consistency", value: 11, suffix: "x" },
+              { icon: Users, label: "Warm leads activated", value: 3, suffix: "x" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -345,7 +448,9 @@ export default function Home() {
                 </div>
                 <div className="min-w-0">
                   <div className="text-xs text-slate-300">{stat.label}</div>
-                  <div className="text-lg font-semibold text-white">{stat.value}</div>
+                  <div className="text-lg font-semibold text-white">
+                    <AnimatedCounter value={stat.value} prefix={stat.prefix ?? ""} suffix={stat.suffix ?? ""} duration={2} />
+                  </div>
                 </div>
               </div>
             ))}
@@ -395,81 +500,227 @@ export default function Home() {
         </motion.div>
       </Section>
 
-      {/* ⬛ CTA SECTION */}
+      {/* STATS — animated counters */}
       <Section
-        id="cta"
-        className="bg-gradient-to-r from-teal-600 via-emerald-500 to-sky-500 text-white"
+        id="stats"
+        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
       >
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto text-center"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let’s Build Your Next Revenue Growth Phase
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <AnimatedCounter value={50} suffix="+" duration={2} />
+              </div>
+              <div className="text-slate-400 font-medium">Partners & growing</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <AnimatedCounter value={142} suffix="%" duration={2} />
+              </div>
+              <div className="text-slate-400 font-medium">Avg. revenue uplift</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <AnimatedCounter value={98} suffix="%" duration={2} />
+              </div>
+              <div className="text-slate-400 font-medium">Client satisfaction</div>
+            </div>
+          </div>
+        </motion.div>
+      </Section>
+
+      {/* TESTIMONIALS */}
+      <Section
+        id="testimonials"
+        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              What partners say about us
+            </h2>
+            <p className="text-lg text-slate-400 max-w-xl mx-auto">
+              Real results from teams who scaled revenue with Converra.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: "Converra completely transformed our outbound motion. We went from booking 5 demos a month to over 40 within 90 days.",
+                name: "Sarah Chen",
+                role: "CEO, TechFlow",
+                stars: 5,
+              },
+              {
+                quote: "Finally, a revenue partner that acts like an extension of our team. Transparent, accountable, and results-driven.",
+                name: "Marcus Webb",
+                role: "VP Sales, ScaleOps",
+                stars: 5,
+              },
+              {
+                quote: "We needed to scale without hiring. Converra gave us dedicated execution and real pipeline visibility. Game changer.",
+                name: "Priya Sharma",
+                role: "Founder, DataStack",
+                stars: 5,
+              },
+            ].map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                whileHover={{ y: -4 }}
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:border-teal-500/20 hover:shadow-teal-500/10 transition-all duration-300"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(t.stars)].map((_, j) => (
+                    <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-slate-200 leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
+                <div>
+                  <div className="font-semibold text-white">{t.name}</div>
+                  <div className="text-sm text-slate-400">{t.role}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </Section>
+
+      {/* CTA SECTION — gradient button with hover glow */}
+      <Section
+        id="cta"
+        className="relative overflow-hidden bg-gradient-to-b from-slate-950 to-black text-white"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-600/20 via-emerald-500/10 to-sky-500/20" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 max-w-3xl mx-auto text-center"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Let’s build your next revenue growth phase
           </h2>
-          <p className="text-lg text-slate-300 mb-8">
+          <p className="text-lg text-slate-300 mb-10">
             If your business is ready to scale revenue through focused sales execution and performance-driven partnerships, we’re ready to work with you.
           </p>
 
-          <div className="flex justify-center mb-6">
+          <motion.div
+            className="inline-block"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
             <Button
               onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-              className="h-12 px-8 text-base bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
+              className="h-14 px-10 text-lg font-semibold bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 text-white shadow-xl shadow-teal-500/40 hover:shadow-teal-400/50 hover:shadow-2xl transition-all duration-300 border-0"
             >
               Book a Strategy Call
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </div>
+          </motion.div>
 
-          <p className="text-slate-300">
+          <p className="text-slate-400 text-sm mt-6">
             Discuss your growth goals and explore how Converra can support your revenue expansion.
           </p>
         </motion.div>
       </Section>
 
-      {/* Footer */}
-      <footer id="footer-contact" className="bg-slate-900 border-t border-slate-800 py-12 text-slate-400">
+      {/* FOOTER — Product, Company, Resources, Legal */}
+      <footer id="footer-contact" className="bg-black border-t border-white/10 py-16 text-slate-400">
         <div className="container-padding">
-          <div className="grid lg:grid-cols-5 gap-10 mb-12 items-start">
-            <div className="lg:col-span-2">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl font-bold text-white font-display uppercase tracking-wide">
-                  Convera Growth Partners
-                </span>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-14">
+            <div className="col-span-2 md:col-span-4 lg:col-span-2">
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/logo.jpeg" alt="Converra" className="h-8 w-auto rounded-lg" />
+                <span className="text-lg font-bold text-white uppercase tracking-tight">Converra</span>
               </div>
-              <p className="text-sm text-slate-300 mb-2">
+              <p className="text-sm text-slate-400 mb-2 max-w-xs">
                 Strategic Revenue Partnerships for Growth-Focused Businesses
               </p>
-              <p className="text-teal-400 text-sm font-medium">
-                Conversation. Conviction. Conversion.
-              </p>
+              <p className="text-teal-400 text-sm font-medium">Conversation. Conviction. Conversion.</p>
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#problem" className="hover:text-teal-400 transition-colors">Problem</a></li>
-                <li><a href="#solution" className="hover:text-teal-400 transition-colors">Solution</a></li>
-                <li><a href="#process" className="hover:text-teal-400 transition-colors">Process</a></li>
-                <li><a href="#results" className="hover:text-teal-400 transition-colors">Results</a></li>
-                <li><a href="#ideal-clients" className="hover:text-teal-400 transition-colors">Ideal Clients</a></li>
+              <h4 className="font-semibold text-white mb-4">Product</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#features" className="hover:text-teal-400 transition-colors">Features</a></li>
+                <li><a href="#product-preview" className="hover:text-teal-400 transition-colors">Demo</a></li>
+                <li><a href="#process" className="hover:text-teal-400 transition-colors">How it works</a></li>
+                <li><a href="#cta" className="hover:text-teal-400 transition-colors">Pricing</a></li>
               </ul>
             </div>
 
-            <div className="lg:col-span-2">
-              <h4 className="font-bold text-white mb-4">Contact</h4>
-              <ContactForm />
+            <div>
+              <h4 className="font-semibold text-white mb-4">Company</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#solution" className="hover:text-teal-400 transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-teal-400 transition-colors">Careers</a></li>
+                <li><a href="#footer-contact" className="hover:text-teal-400 transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-white mb-4">Resources</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#testimonials" className="hover:text-teal-400 transition-colors">Testimonials</a></li>
+                <li><a href="#results" className="hover:text-teal-400 transition-colors">Results</a></li>
+                <li><a href="#" className="hover:text-teal-400 transition-colors">Blog</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-white mb-4">Legal</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#" className="hover:text-teal-400 transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-teal-400 transition-colors">Terms of Service</a></li>
+              </ul>
             </div>
           </div>
-          
-          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-            <div>&copy; {new Date().getFullYear()} Converra Inc. All rights reserved.</div>
-            <div className="flex gap-4">
-              <a href="https://www.instagram.com/converra_?igsh=dDI5cThha3h1c3Yw" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
-              <a href="https://www.linkedin.com/company/converra/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+
+          {/* Contact form row */}
+          <div className="mb-14">
+            <h4 className="font-semibold text-white mb-4">Get in touch</h4>
+            <ContactForm />
+          </div>
+
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-sm text-slate-500">
+              &copy; {new Date().getFullYear()} Converra Inc. All rights reserved.
+            </div>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://www.instagram.com/converra_?igsh=dDI5cThha3h1c3Yw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-teal-400 transition-colors"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/company/converra/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-teal-400 transition-colors"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
