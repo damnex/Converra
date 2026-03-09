@@ -554,7 +554,7 @@ export default function Home() {
       {/* 🟫 IDEAL CLIENTS SECTION */}
       <Section
         id="ideal-clients"
-        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 !pb-8 md:!pb-12"
       >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -592,7 +592,7 @@ export default function Home() {
       {/* STATS — animated counters */}
       <Section
         id="stats"
-        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 !pt-8 md:!pt-12"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -604,9 +604,9 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                <AnimatedCounter value={50} suffix="+" duration={2} />
+                <AnimatedCounter value={12} suffix="+" duration={2} />
               </div>
-              <div className="text-slate-400 font-medium">Partners & growing</div>
+              <div className="text-slate-400 font-medium">partners and growing</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
