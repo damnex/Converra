@@ -57,7 +57,7 @@ export function Navbar() {
           <img
             src="/logo.jpeg"
             alt="Converra"
-            className="h-12 w-auto rounded-xl object-contain md:h-14 transition-transform duration-200 group-hover:scale-105"
+            className="h-14 w-auto rounded-xl object-contain md:h-16 lg:h-[4.75rem] transition-transform duration-200 group-hover:scale-105"
           />
         </Link>
 
