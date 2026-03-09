@@ -3,7 +3,8 @@ import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
 import { ChartVisual } from "@/components/chart-visual";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { DashboardMock } from "@/components/dashboard-mock";
+import { CheckCircle, ArrowRight, TrendingUp, BarChart3, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { openBookStrategyCall } from "@/lib/links";
 
@@ -200,6 +201,10 @@ export default function Home() {
             <p>You focus on building the business.</p>
             <p>We focus on expanding its revenue potential.</p>
           </div>
+
+          <div className="mt-12">
+            <DashboardMock />
+          </div>
         </motion.div>
       </Section>
 
@@ -311,6 +316,39 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                icon: TrendingUp,
+                label: "Lead-to-Close Uplift",
+                value: "+32%",
+              },
+              {
+                icon: BarChart3,
+                label: "Pipeline Consistency",
+                value: "11.4x",
+              },
+              {
+                icon: Users,
+                label: "Warm Leads Activated",
+                value: "3.2x",
+              },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 shadow-md shadow-black/30"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-500/15 text-teal-300">
+                  <stat.icon className="h-4 w-4" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs text-slate-300">{stat.label}</div>
+                  <div className="text-lg font-semibold text-white">{stat.value}</div>
+                </div>
+              </div>
+            ))}
           </div>
 
           <p className="text-lg text-slate-300 mt-8">
