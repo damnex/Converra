@@ -95,7 +95,10 @@ export default function Home() {
       </Section>
 
       {/* 🟥 PROBLEM SECTION */}
-      <Section id="problem" className="bg-slate-50 dark:bg-slate-900">
+      <Section
+        id="problem"
+        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+      >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -103,16 +106,16 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Revenue Shouldn’t Stall Because Sales Bandwidth Is Limited
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+          <p className="text-lg text-slate-300 mb-8">
             Many high-potential SaaS and tech companies struggle to scale revenue consistently, not because of product limitations, but due to gaps in sales execution.
           </p>
 
-          <div className="rounded-2xl border border-red-200/60 dark:border-red-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8">
-            <div className="font-semibold text-slate-800 dark:text-slate-100 mb-4">Common challenges include:</div>
-            <ul className="space-y-3 text-slate-700 dark:text-slate-200">
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl p-6 md:p-8 shadow-xl shadow-black/40">
+            <div className="font-semibold text-white mb-4">Common challenges include:</div>
+            <ul className="space-y-3 text-slate-200">
               {[
                 "Warm leads not converting consistently",
                 "Founder-dependent sales cycles",
@@ -129,14 +132,17 @@ export default function Home() {
             </ul>
           </div>
 
-          <p className="text-lg text-slate-600 dark:text-slate-300 mt-8">
+          <p className="text-lg text-slate-300 mt-8">
             Without structured and dedicated sales execution, growth becomes unpredictable and opportunities slip through the cracks.
           </p>
         </motion.div>
       </Section>
 
       {/* 🟩 SOLUTION SECTION */}
-      <Section id="solution" className="bg-slate-50 dark:bg-slate-900">
+      <Section
+        id="solution"
+        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+      >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,33 +150,33 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             A Performance-Driven Revenue Partnership Model
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+          <p className="text-lg text-slate-300 mb-6">
             Converra acts as an extended revenue arm for your business.
           </p>
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed mb-6">
             We collaborate with your team to represent your product, engage qualified prospects, and drive revenue growth through dedicated sales execution — aligned with your business goals and market positioning.
           </p>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            <div className="space-y-4 text-slate-700 dark:text-slate-200 leading-relaxed">
+            <div className="space-y-4 text-slate-200 leading-relaxed">
               <p>
                 For many growing startups and technology companies, scaling revenue internally becomes a challenge. Founders often find themselves deeply involved in sales operations — hiring teams, managing attrition, monitoring pipelines, and constantly pushing for conversions.
               </p>
               <p>
                 While sales is critical, excessive founder involvement in day-to-day revenue operations can divert attention from what truly drives long-term success: building the product, improving customer experience, and strengthening core operations.
               </p>
-              <p className="font-semibold text-slate-900 dark:text-white">Converra bridges this gap.</p>
+              <p className="font-semibold text-white">Converra bridges this gap.</p>
               <p>
                 Our partnership model is designed to support your existing sales efforts while enabling additional revenue expansion without increasing internal complexity.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-emerald-200/60 dark:border-emerald-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8">
-              <div className="font-semibold text-slate-800 dark:text-slate-100 mb-4">Our approach ensures:</div>
-              <ul className="space-y-3 text-slate-700 dark:text-slate-200">
+            <div className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl p-6 md:p-8 shadow-xl shadow-black/40">
+              <div className="font-semibold text-white mb-4">Our approach ensures:</div>
+              <ul className="space-y-3 text-slate-200">
                 {[
                   "Founders and leadership stay focused on product innovation and strategic growth",
                   "Internal teams operate without added pressure or bandwidth constraints",
@@ -188,9 +194,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-10 space-y-2 text-slate-700 dark:text-slate-200">
+          <div className="mt-10 space-y-2 text-slate-200">
             <p>Your internal team continues to drive core sales.</p>
-            <p className="font-semibold text-slate-900 dark:text-white">Converra enables the next phase of revenue scale.</p>
+            <p className="font-semibold text-white">Converra enables the next phase of revenue scale.</p>
             <p>You focus on building the business.</p>
             <p>We focus on expanding its revenue potential.</p>
           </div>
@@ -198,7 +204,10 @@ export default function Home() {
       </Section>
 
       {/* 🟨 PROCESS SECTION */}
-      <Section id="process" className="bg-slate-50 dark:bg-slate-900">
+      <Section
+        id="process"
+        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+      >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -206,7 +215,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
             How We Drive Predictable Revenue Growth
           </h2>
 
@@ -243,17 +252,17 @@ export default function Home() {
                 desc: "Our engagement model is aligned with measurable outcomes — ensuring accountability, sustained momentum, and mutually beneficial revenue expansion.",
               },
             ].map((step) => (
-              <div
-                key={step.num}
-                className="rounded-2xl border border-amber-200/60 dark:border-amber-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8"
-              >
+                <div
+                  key={step.num}
+                  className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl p-6 md:p-8 shadow-lg shadow-black/30"
+                >
                 <div className="flex items-start gap-4">
                   <div className="text-2xl md:text-3xl leading-none">{step.num}</div>
                   <div className="min-w-0">
-                    <div className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2">
+                    <div className="text-lg md:text-xl font-bold text-white mb-2">
                       {step.title}
                     </div>
-                    <div className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    <div className="text-slate-200 leading-relaxed">
                       {step.desc}
                     </div>
                   </div>
@@ -265,7 +274,10 @@ export default function Home() {
       </Section>
 
       {/* 🟪 RESULTS SECTION */}
-      <Section id="results" className="bg-slate-50 dark:bg-slate-900">
+      <Section
+        id="results"
+        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+      >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -273,18 +285,18 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Turning Opportunities Into Measurable Business Outcomes
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+          <p className="text-lg text-slate-300 mb-8">
             Converra partnerships are built on accountability, execution discipline, and sustained revenue impact. Our focus goes beyond supporting sales activities — we work alongside businesses to create tangible growth outcomes that strengthen their market position.
           </p>
 
-          <div className="rounded-2xl border border-purple-200/60 dark:border-purple-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8">
-            <div className="font-semibold text-slate-800 dark:text-slate-100 mb-4">
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl p-6 md:p-8 shadow-xl shadow-black/40">
+            <div className="font-semibold text-white mb-4">
               Organizations partnering with Converra experience:
             </div>
-            <ul className="space-y-3 text-slate-700 dark:text-slate-200">
+            <ul className="space-y-3 text-slate-200">
               {[
                 "📈 Higher conversion of qualified leads into paying customers",
                 "📈 Stronger, well-managed pipelines with consistent opportunity flow",
@@ -301,14 +313,17 @@ export default function Home() {
             </ul>
           </div>
 
-          <p className="text-lg text-slate-600 dark:text-slate-300 mt-8">
+          <p className="text-lg text-slate-300 mt-8">
             We don’t operate as an external vendor. We function as a committed revenue partner focused on meaningful business results.
           </p>
         </motion.div>
       </Section>
 
       {/* 🟫 IDEAL CLIENTS SECTION */}
-      <Section id="ideal-clients" className="bg-slate-50 dark:bg-slate-900">
+      <Section
+        id="ideal-clients"
+        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+      >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -316,12 +331,12 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Who We Work Best With
           </h2>
-          <div className="rounded-2xl border border-amber-300/50 dark:border-amber-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8">
-            <div className="font-semibold text-slate-800 dark:text-slate-100 mb-4">Converra partners with:</div>
-            <ul className="space-y-3 text-slate-700 dark:text-slate-200">
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl p-6 md:p-8">
+            <div className="font-semibold text-white mb-4">Converra partners with:</div>
+            <ul className="space-y-3 text-slate-200">
               {[
                 "SaaS companies scaling beyond early growth stages",
                 "Technology firms expanding into new markets",
@@ -330,20 +345,23 @@ export default function Home() {
                 "Companies looking to unlock additional revenue channels",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-amber-700 dark:bg-amber-400 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-amber-400 shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <p className="text-lg text-slate-700 dark:text-slate-200 mt-8">
+          <p className="text-lg text-slate-300 mt-8">
             If growth is your priority but internal sales capacity is limited, Converra is built for you.
           </p>
         </motion.div>
       </Section>
 
       {/* ⬛ CTA SECTION */}
-      <Section id="cta" className="bg-slate-950 text-white">
+      <Section
+        id="cta"
+        className="bg-gradient-to-r from-teal-600 via-emerald-500 to-sky-500 text-white"
+      >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
