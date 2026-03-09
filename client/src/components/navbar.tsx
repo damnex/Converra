@@ -65,6 +65,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           {[
             { label: "Features", href: "#features" },
+            { label: "Solution", href: "#solution" },
             { label: "How It Works", href: "#process" },
             { label: "Contact", href: "#footer-contact" },
           ].map(({ label, href }) => (
@@ -120,12 +121,14 @@ export function Navbar() {
                   Toggle theme
                 </button>
 
-                {["Features", "How It Works", "Contact"].map((item) => (
+                {["Features", "Solution", "How It Works", "Contact"].map((item) => (
                   <a
                     key={item}
                     href={
                       item === "Features"
                         ? "#features"
+                        : item === "Solution"
+                        ? "#solution"
                         : item === "How It Works"
                         ? "#process"
                         : "#footer-contact"
