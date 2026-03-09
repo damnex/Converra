@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
+import { ChartVisual } from "@/components/chart-visual";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { openBookStrategyCall } from "@/lib/links";
@@ -26,59 +27,70 @@ export default function Home() {
         </div>
 
         <div className="container-padding relative z-10 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center"
-          >
-            <div className="mb-6 flex justify-center">
-              <img
-                src="/logo.jpeg"
-                alt="CONVERRA GROWTH PARTNERS logo"
-                className="h-12 w-auto rounded-xl object-contain md:h-14"
-              />
-            </div>
-
-            <p className="text-sm font-medium text-teal-300 tracking-wide mb-4">
-              Conversation. Conviction. Conversion.
-            </p>
-
-            <div className="mb-6 flex justify-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-teal-200 backdrop-blur">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                🟢 Accepting New Partners for Q4
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-14 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
+            >
+              <div className="mb-6 flex justify-center lg:justify-start">
+                <img
+                  src="/logo.jpeg"
+                  alt="CONVERRA GROWTH PARTNERS logo"
+                  className="h-12 w-auto rounded-xl object-contain md:h-14"
+                />
               </div>
-            </div>
 
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.12] text-white mb-6">
-              Strategic Revenue Partners for Growth-Focused Companies
-            </h1>
+              <p className="text-sm font-medium text-teal-300 tracking-wide mb-4">
+                Conversation. Conviction. Conversion.
+              </p>
 
-            <p className="text-base md:text-lg text-slate-200 leading-relaxed mb-8">
-              We help SaaS and technology businesses turn warm leads into predictable revenue through dedicated sales execution aligned with business outcomes.
-            </p>
+              <div className="mb-6 flex justify-center lg:justify-start">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-teal-200 backdrop-blur">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                  🟢 Accepting New Partners for Q4
+                </div>
+              </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-10">
-              <Button
-                onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-                className="h-12 px-6 text-base bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
-              >
-                Book Strategy Call
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => scrollTo("problem")}
-                className="h-12 px-6 text-base border-white/20 text-white hover:bg-white/10 bg-transparent"
-              >
-                Learn More
-              </Button>
-            </div>
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.12] text-white mb-6">
+                Strategic Revenue Partners for Growth-Focused Companies
+              </h1>
 
-            <div className="text-sm text-slate-300">
-              Trusted by growing SaaS/Tech teams to accelerate revenue without expanding internal sales bandwidth.
-            </div>
-          </motion.div>
+              <p className="text-base md:text-lg text-slate-200 leading-relaxed mb-8">
+                We help SaaS and technology businesses turn warm leads into predictable revenue through dedicated sales execution aligned with business outcomes.
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 mb-10">
+                <Button
+                  onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
+                  className="h-12 px-6 text-base bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
+                >
+                  Book Strategy Call
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => scrollTo("problem")}
+                  className="h-12 px-6 text-base border-white/20 text-white hover:bg-white/10 bg-transparent"
+                >
+                  Learn More
+                </Button>
+              </div>
+
+              <div className="text-sm text-slate-300">
+                Trusted by growing SaaS/Tech teams to accelerate revenue without expanding internal sales bandwidth.
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="relative"
+            >
+              <ChartVisual />
+            </motion.div>
+          </div>
         </div>
       </Section>
 
