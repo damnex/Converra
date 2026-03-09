@@ -52,20 +52,13 @@ export function Navbar() {
       }`}
     >
       <div className="container-padding flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group cursor-pointer shrink-0">
+        {/* Logo — logo only, larger */}
+        <Link href="/" className="flex items-center shrink-0 group cursor-pointer" aria-label="Converra home">
           <img
             src="/logo.jpeg"
             alt="Converra"
-            className="h-8 w-auto rounded-lg object-contain"
+            className="h-12 w-auto rounded-xl object-contain md:h-14 transition-transform duration-200 group-hover:scale-105"
           />
-          <span
-            className={`text-lg font-bold font-display tracking-tight uppercase hidden sm:inline ${
-              isScrolled ? "text-slate-900 dark:text-white" : "text-white"
-            }`}
-          >
-            CONVERRA
-          </span>
         </Link>
 
         {/* Desktop Menu - Stripe/Vercel style */}
