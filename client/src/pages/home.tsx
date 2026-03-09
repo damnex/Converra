@@ -17,6 +17,8 @@ import {
   LayoutGrid,
   MessageSquare,
   Star,
+  DollarSign,
+  Globe,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { openBookStrategyCall } from "@/lib/links";
@@ -461,72 +463,91 @@ export default function Home() {
         </motion.div>
       </Section>
 
-      {/* 🟪 RESULTS SECTION */}
+      {/* RESULTS — headline, large metrics, outcome cards */}
       <Section
         id="results"
-        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 overflow-hidden"
       >
+        {/* Subtle gradient glow behind metrics */}
+        <div className="results-metrics-glow absolute inset-0 pointer-events-none z-0" aria-hidden />
+
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="max-w-5xl mx-auto"
+          className="relative z-10 max-w-6xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-16">
             Turning Opportunities Into Measurable Business Outcomes
           </h2>
-          <p className="text-lg text-slate-300 mb-8">
-            Converra partnerships are built on accountability, execution discipline, and sustained revenue impact. Our focus goes beyond supporting sales activities — we work alongside businesses to create tangible growth outcomes that strengthen their market position.
-          </p>
 
-          <div className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl p-6 md:p-8 shadow-xl shadow-black/40">
-            <div className="font-semibold text-white mb-4">
-              Organizations partnering with Converra experience:
-            </div>
-            <ul className="space-y-3 text-slate-200">
-              {[
-                "📈 Higher conversion of qualified leads into paying customers",
-                "📈 Stronger, well-managed pipelines with consistent opportunity flow",
-                "📈 Expanded market reach and access to new customer segments",
-                "📈 Reduced pressure on internal teams and leadership bandwidth",
-                "📈 Improved sales consistency through dedicated execution",
-                "📈 Additional revenue channels that accelerate overall business growth",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 text-purple-700 dark:text-purple-300">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          {/* Large metric cards — numbers dominant */}
+          <div className="grid gap-6 sm:grid-cols-3 mb-20">
             {[
-              { icon: TrendingUp, label: "Lead-to-Close Uplift", value: 32, suffix: "%", prefix: "+" },
-              { icon: BarChart3, label: "Pipeline consistency", value: 11, suffix: "x" },
-              { icon: Users, label: "Warm leads activated", value: 3, suffix: "x" },
+              { icon: TrendingUp, label: "Lead-to-Close Conversion", value: 32, suffix: "%", prefix: "+" },
+              { icon: BarChart3, label: "Pipeline Consistency", value: 11, suffix: "x" },
+              { icon: Users, label: "Warm Leads Activated", value: 3, suffix: "x" },
             ].map((stat) => (
-              <div
+              <motion.div
                 key={stat.label}
-                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 shadow-md shadow-black/30"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.4 }}
+                className="results-metric-card flex flex-col items-center justify-center text-center px-6 py-10 md:py-14"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-500/15 text-teal-300">
-                  <stat.icon className="h-4 w-4" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/20 text-cyan-300 mb-4">
+                  <stat.icon className="h-6 w-6" />
                 </div>
-                <div className="min-w-0">
-                  <div className="text-xs text-slate-300">{stat.label}</div>
-                  <div className="text-lg font-semibold text-white">
-                    <AnimatedCounter value={stat.value} prefix={stat.prefix ?? ""} suffix={stat.suffix ?? ""} duration={2} />
-                  </div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums tracking-tight">
+                  <AnimatedCounter
+                    value={stat.value}
+                    prefix={stat.prefix ?? ""}
+                    suffix={stat.suffix ?? ""}
+                    duration={2}
+                  />
                 </div>
-              </div>
+                <div className="text-slate-300 font-medium mt-2 text-sm md:text-base">{stat.label}</div>
+              </motion.div>
             ))}
           </div>
 
-          <p className="text-lg text-slate-300 mt-8">
-            We don’t operate as an external vendor. We function as a committed revenue partner focused on meaningful business results.
-          </p>
+          {/* Outcome cards — glass, icon, title, short description */}
+          <div className="grid gap-6 sm:grid-cols-3">
+            {[
+              {
+                icon: DollarSign,
+                title: "Revenue Performance",
+                description: "Higher conversion of qualified leads into paying customers and additional revenue channels.",
+              },
+              {
+                icon: BarChart3,
+                title: "Pipeline Consistency",
+                description: "Stronger, well-managed pipelines with consistent opportunity flow and execution discipline.",
+              },
+              {
+                icon: Globe,
+                title: "Market Expansion",
+                description: "Expanded market reach and access to new customer segments without stretching internal teams.",
+              },
+            ].map((card) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4 }}
+                className="results-outcome-card p-6 md:p-8"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-300 mb-4">
+                  <card.icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{card.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{card.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </Section>
 

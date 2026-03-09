@@ -164,4 +164,29 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-4px); }
   }
+
+  /* Results section: dark glass, cyan glow, hover */
+  .results-metric-card {
+    @apply rounded-2xl border bg-slate-900/60 backdrop-blur-xl transition-all duration-300;
+    border-color: rgba(34, 211, 238, 0.2);
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.08), 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+  .results-metric-card:hover {
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.15), 0 0 0 1px rgba(34, 211, 238, 0.2), 0 12px 40px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+  }
+  .results-outcome-card {
+    @apply rounded-2xl border bg-slate-900/50 backdrop-blur-xl transition-all duration-300;
+    border-color: rgba(34, 211, 238, 0.15);
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.06), 0 4px 24px rgba(0, 0, 0, 0.3);
+  }
+  .results-outcome-card:hover {
+    border-color: rgba(34, 211, 238, 0.35);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.12), 0 0 0 1px rgba(34, 211, 238, 0.18), 0 8px 32px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+  }
+  .results-metrics-glow {
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(34, 211, 238, 0.12) 0%, transparent 60%);
+  }
 }
