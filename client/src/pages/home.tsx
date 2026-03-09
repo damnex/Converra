@@ -30,17 +30,24 @@ export default function Home() {
     <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden">
       <Navbar />
 
-      {/* HERO — deep blue to black, floating product card */}
+      {/* HERO — futuristic dark gradient, animated glow, glass streaks */}
       <section
         id="hero"
-        className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-b from-blue-950 via-slate-950 to-black text-white"
+        className="hero-gradient-bg relative min-h-screen flex items-center justify-center overflow-hidden text-white"
       >
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-teal-500/10 rounded-full blur-[100px]" />
+        {/* Vertical light streaks (glass / tech feel) */}
+        <div className="hero-streaks z-0" aria-hidden="true">
+          <div className="hero-streaks-inner" />
         </div>
 
-        <div className="container-padding relative z-10 pt-28 pb-20 lg:pt-32 lg:pb-28">
+        {/* Extra radial blurs for soft light beam */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-1/4 -left-[20%] w-[70vmax] h-[70vmax] rounded-full bg-blue-600/15 blur-[100px]" />
+          <div className="absolute bottom-1/4 -right-[10%] w-[50vmax] h-[50vmax] rounded-full bg-cyan-500/10 blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vmax] h-[60vmax] rounded-full bg-teal-500/10 blur-[140px]" />
+        </div>
+
+        <div className="container-padding relative z-10 w-full pt-24 pb-20 lg:pt-28 lg:pb-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 24 }}

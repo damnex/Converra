@@ -89,4 +89,101 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-teal-500/30 border border-transparent;
   }
+
+  /* Futuristic hero background: deep navy + animated gradient wave + glass streaks */
+  .hero-gradient-bg {
+    background-color: #020b1f;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-gradient-bg::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: linear-gradient(
+      125deg,
+      transparent 0%,
+      rgba(30, 58, 138, 0.15) 20%,
+      rgba(59, 130, 246, 0.25) 35%,
+      rgba(34, 211, 238, 0.2) 50%,
+      rgba(20, 184, 166, 0.2) 65%,
+      rgba(30, 58, 138, 0.15) 80%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    animation: hero-glow-drift 18s ease-in-out infinite;
+    pointer-events: none;
+    filter: blur(80px);
+  }
+
+  .hero-gradient-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse 80% 50% at 20% 40%,
+        rgba(59, 130, 246, 0.12) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 80% 60%,
+        rgba(20, 184, 166, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at 50% 80%,
+        rgba(34, 211, 238, 0.08) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
+
+  .hero-streaks {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  }
+
+  .hero-streaks-inner {
+    position: absolute;
+    inset: -20%;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 80px,
+      rgba(255, 255, 255, 0.02) 80px,
+      rgba(255, 255, 255, 0.04) 82px
+    );
+    animation: hero-streaks-shift 20s linear infinite;
+  }
+
+  @keyframes hero-glow-drift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+      opacity: 1;
+    }
+    50% {
+      background-position: 100% 50%;
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes hero-streaks-shift {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(80px);
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
