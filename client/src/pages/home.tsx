@@ -694,20 +694,20 @@ export default function Home() {
       {/* CTA SECTION — gradient button with hover glow */}
       <Section
         id="cta"
-        className="relative overflow-hidden bg-gradient-to-b from-slate-950 to-black text-white"
+        className="relative overflow-hidden bg-slate-950 text-white !py-12 md:!py-16"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-600/20 via-emerald-500/10 to-sky-500/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-950/30 via-transparent to-slate-950" aria-hidden />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 max-w-3xl mx-auto text-center"
+          className="relative z-10 max-w-2xl mx-auto text-center rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-sm px-6 py-10 sm:px-10 sm:py-12 shadow-xl shadow-black/30"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
             Let’s build your next revenue growth phase
           </h2>
-          <p className="text-lg text-slate-300 mb-10">
+          <p className="text-slate-300 mb-6 sm:mb-8 max-w-lg mx-auto">
             If your business is ready to scale revenue through focused sales execution and performance-driven partnerships, we’re ready to work with you.
           </p>
 
@@ -718,14 +718,14 @@ export default function Home() {
           >
             <Button
               onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-              className="h-14 px-10 text-lg font-semibold bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 text-white shadow-xl shadow-teal-500/40 hover:shadow-teal-400/50 hover:shadow-2xl transition-all duration-300 border-0"
+              className="h-12 sm:h-14 px-8 sm:px-10 text-base sm:text-lg font-semibold bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300 border-0"
             >
               Book a Strategy Call
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
           </motion.div>
 
-          <p className="text-slate-400 text-sm mt-6">
+          <p className="text-slate-400 text-sm mt-4">
             Discuss your growth goals and explore how Converra can support your revenue expansion.
           </p>
         </motion.div>
