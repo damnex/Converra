@@ -90,73 +90,68 @@
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-teal-500/30 border border-transparent;
   }
 
-  /* Hero: 3D mesh gradient – dark navy base + soft cyan/aqua glow wave + tech lines */
-  .hero-gradient-bg {
-    background: linear-gradient(135deg, #020617 0%, #021a3a 40%, #020617 100%);
+  /* Futuristic hero: deep navy base + animated diagonal gradient wave */
+  .hero-futuristic {
+    background-color: #020b1f;
     position: relative;
-    overflow: hidden;
+    isolation: isolate;
   }
 
-  /* Mesh gradient glow: diagonal wave (bottom-left → top-right), strong blur for depth */
-  .hero-gradient-bg::before {
+  .hero-futuristic::before {
     content: "";
     position: absolute;
-    inset: -30%;
-    background:
-      radial-gradient(circle at 20% 65%, rgba(34, 211, 238, 0.45) 0%, transparent 60%),
-      radial-gradient(circle at 40% 60%, rgba(56, 189, 248, 0.45) 0%, transparent 60%),
-      radial-gradient(circle at 60% 55%, rgba(34, 211, 238, 0.4) 0%, transparent 60%),
-      radial-gradient(circle at 80% 50%, rgba(56, 189, 248, 0.35) 0%, transparent 60%);
-    filter: blur(90px);
-    animation: hero-mesh-drift 20s ease-in-out infinite;
+    inset: 0;
+    background: linear-gradient(
+      125deg,
+      transparent 0%,
+      rgba(30, 58, 138, 0.25) 15%,
+      rgba(59, 130, 246, 0.2) 35%,
+      rgba(34, 211, 238, 0.22) 55%,
+      rgba(20, 184, 166, 0.25) 75%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    animation: hero-gradient-wave 14s ease-in-out infinite;
     pointer-events: none;
+    z-index: 0;
   }
 
-  /* Glass tech lines – subtle vertical lines */
-  .hero-streaks {
+  /* Vertical light streaks – glass / tech feel */
+  .hero-futuristic::after {
+    content: "";
     position: absolute;
     inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    mask-image: linear-gradient(to bottom, transparent 8%, black 25%, black 75%, transparent 92%);
-  }
-
-  .hero-streaks-inner {
-    position: absolute;
-    inset: -10%;
-    background: repeating-linear-gradient(
+    background-image: repeating-linear-gradient(
       90deg,
-      transparent 0px,
-      transparent 64px,
-      rgba(255, 255, 255, 0.05) 64px,
-      rgba(255, 255, 255, 0.05) 65px
+      transparent 0,
+      transparent 80px,
+      rgba(255, 255, 255, 0.015) 80px,
+      rgba(255, 255, 255, 0.015) 81px
     );
-    animation: hero-streaks-shift 28s linear infinite;
+    pointer-events: none;
+    z-index: 0;
   }
 
-  @keyframes hero-mesh-drift {
-    0%, 100% {
+  @keyframes hero-gradient-wave {
+    0%,
+    100% {
+      background-position: 0% 50%;
       opacity: 1;
-      transform: translate(0, 0) scale(1);
     }
     50% {
+      background-position: 100% 50%;
       opacity: 0.95;
-      transform: translate(2%, -1.5%) scale(1.02);
-    }
-  }
-
-  @keyframes hero-streaks-shift {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(64px);
     }
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Radial glow orbs for hero – use as child divs */
+  .hero-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
   }
 }

@@ -30,24 +30,34 @@ export default function Home() {
     <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden">
       <Navbar />
 
-      {/* HERO — futuristic dark gradient, animated glow, glass streaks */}
+      {/* HERO — premium futuristic: deep navy, diagonal gradient wave, radial glows, vertical streaks */}
       <section
         id="hero"
-        className="hero-gradient-bg relative min-h-screen flex items-center justify-center overflow-hidden text-white"
+        className="hero-futuristic relative min-h-screen flex items-center overflow-hidden text-white"
       >
-        {/* Vertical light streaks (glass / tech feel) */}
-        <div className="hero-streaks z-0" aria-hidden="true">
-          <div className="hero-streaks-inner" />
+        {/* Large radial gradient blurs – soft light beam feel */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="hero-glow-orb w-[min(100vw,800px)] h-[500px] -top-40 -right-20 opacity-40"
+            style={{
+              background: "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.35) 0%, transparent 70%)",
+            }}
+          />
+          <div
+            className="hero-glow-orb w-[600px] h-[400px] top-1/2 -left-32 -translate-y-1/2 opacity-30"
+            style={{
+              background: "radial-gradient(ellipse at center, rgba(34, 211, 238, 0.3) 0%, transparent 70%)",
+            }}
+          />
+          <div
+            className="hero-glow-orb w-[500px] h-[500px] bottom-0 right-1/4 opacity-35"
+            style={{
+              background: "radial-gradient(ellipse at center, rgba(20, 184, 166, 0.3) 0%, transparent 70%)",
+            }}
+          />
         </div>
 
-        {/* Extra radial blurs for soft light beam */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-1/4 -left-[20%] w-[70vmax] h-[70vmax] rounded-full bg-blue-600/15 blur-[100px]" />
-          <div className="absolute bottom-1/4 -right-[10%] w-[50vmax] h-[50vmax] rounded-full bg-cyan-500/10 blur-[120px]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vmax] h-[60vmax] rounded-full bg-teal-500/10 blur-[140px]" />
-        </div>
-
-        <div className="container-padding relative z-10 w-full pt-24 pb-20 lg:pt-28 lg:pb-24">
+        <div className="container-padding relative z-10 w-full pt-24 pb-16 lg:pt-28 lg:pb-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -55,19 +65,19 @@ export default function Home() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
             >
-              <p className="text-sm font-medium text-teal-400 tracking-wide mb-4">
+              <p className="text-sm font-medium text-cyan-400/90 tracking-wide mb-4">
                 Conversation. Conviction. Conversion.
               </p>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-200 backdrop-blur mb-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-200 backdrop-blur-sm mb-6">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 Accepting New Partners for Q4
               </div>
 
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white mb-6">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white mb-6 drop-shadow-sm">
                 Strategic Revenue Partners for Growth-Focused Companies
               </h1>
 
-              <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10">
+              <p className="text-lg md:text-xl text-slate-300/95 leading-relaxed mb-10">
                 We help SaaS and technology businesses turn warm leads into predictable revenue through dedicated sales execution aligned with business outcomes.
               </p>
 
@@ -81,28 +91,28 @@ export default function Home() {
                 <Button
                   variant="outline"
                   onClick={() => scrollTo("product-preview")}
-                  className="h-12 px-8 text-base border-white/20 text-white hover:bg-white/10 bg-white/5 backdrop-blur transition-all duration-300"
+                  className="h-12 px-8 text-base border-white/20 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
                   View Demo
                 </Button>
               </div>
 
-              <p className="text-sm text-slate-400">
+              <p className="text-sm text-slate-400/90">
                 Trusted by growing SaaS & tech teams to accelerate revenue without expanding internal sales bandwidth.
               </p>
             </motion.div>
 
-            {/* Floating product preview card with graph */}
+            {/* Floating product preview card – glassmorphism */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="relative"
+              className="relative z-10"
             >
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-2 shadow-2xl shadow-black/50"
+                className="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-xl p-2 shadow-2xl shadow-black/50"
               >
                 <ChartVisual />
               </motion.div>
