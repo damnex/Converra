@@ -360,14 +360,14 @@ export default function Home() {
       {/* PRODUCT PREVIEW — mock UI / dashboard */}
       <Section
         id="product-preview"
-        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="relative overflow-x-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-5xl mx-auto min-w-0"
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
