@@ -35,6 +35,28 @@
   --radius: 0.5rem;
 }
 
+.dark {
+  --background: 222 47% 7%; /* deep slate */
+  --foreground: 210 40% 98%;
+
+  --muted: 217 32% 12%;
+  --muted-foreground: 215 20% 70%;
+
+  --border: 217 32% 18%;
+  --input: 217 32% 18%;
+
+  --primary: 174 71% 42%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 217 32% 12%;
+  --secondary-foreground: 210 40% 98%;
+
+  --accent: 174 71% 42%;
+  --accent-foreground: 0 0% 100%;
+
+  --ring: 174 71% 42%;
+}
+
 @layer base {
   body {
     @apply bg-background text-foreground antialiased selection:bg-teal-500/20 selection:text-teal-700;

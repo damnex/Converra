@@ -2,377 +2,398 @@ import { Navbar } from "@/components/navbar";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
-import { ChartVisual } from "@/components/chart-visual";
-import { DashboardMock } from "@/components/dashboard-mock";
-import { 
-  CheckCircle, ArrowRight, Zap, Target, Users, BarChart, 
-  ShieldCheck, Rocket, LayoutGrid, MessageSquare 
-} from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { openBookStrategyCall } from "@/lib/links";
 
 export default function Home() {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Section */}
-      <div className="relative pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 xl:pt-36 xl:pb-28 bg-slate-900 overflow-hidden">
-        {/* Abstract shapes */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-teal-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
-
-        <div className="container-padding relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 items-center min-h-0">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="min-w-0"
-            >
-              <div className="mb-5 lg:mb-6">
-                <img
-                  src="/logo.jpeg"
-                  alt="Converra"
-                  className="h-12 w-auto object-contain md:h-14 lg:h-14 xl:h-16 rounded-xl"
-                />
-              </div>
-              <p className="text-sm font-medium text-teal-400 tracking-wide mb-2 lg:mb-3">
-                Conversation. Conviction. Conversion.
-              </p>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-teal-400 text-sm font-medium mb-4 lg:mb-5">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
-                </span>
-                Accepting New Partners for Q4
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-4 lg:mb-5 font-display max-w-xl">
-                Performance-Based Revenue Partners for <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">SaaS & Tech Companies</span>
-              </h1>
-              <p className="text-base md:text-lg lg:text-base xl:text-lg text-slate-400 mb-6 lg:mb-7 leading-relaxed max-w-xl">
-                We convert your warm leads into predictable revenue — aligned with your outcomes.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button 
-                  onClick={scrollToContact}
-                  className="h-12 px-6 text-base lg:h-12 xl:h-14 xl:px-8 xl:text-lg bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
-                >
-                  Book Strategy Call
-                </Button>
-                <Button 
-                  variant="outline" 
-                  onClick={scrollToContact}
-                  className="h-12 px-6 text-base lg:h-12 xl:h-14 xl:px-8 xl:text-lg border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white bg-transparent"
-                >
-                  Learn More
-                </Button>
-              </div>
-              
-              <div className="mt-6 lg:mt-8 flex items-center gap-6 text-sm text-slate-500">
-                <div className="flex -space-x-3">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-xs text-white">
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
-                </div>
-                <div>Trusted by 50+ SaaS Companies</div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <ChartVisual />
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Problem Section */}
-      <Section id="problem" className="bg-white">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Strong Traffic. Weak Conversion.
-          </h2>
-          <p className="text-lg text-slate-500">
-            You have the leads — but turning them into predictable revenue is where most teams get stuck.
-          </p>
+      {/* 🟦 HERO SECTION */}
+      <Section
+        id="hero"
+        className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-slate-950 to-slate-900 text-white"
+      >
+        <div className="absolute inset-0">
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-500/15 blur-[90px]" />
+          <div className="absolute -bottom-28 -left-28 h-[420px] w-[420px] rounded-full bg-teal-500/15 blur-[110px]" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: BarChart,
-              title: "Low conversion despite strong traffic",
-              desc: "Leads are coming in, but they're not converting. The bottleneck is in your conversion systems, not your marketing."
-            },
-            {
-              icon: Users,
-              title: "Founder-led sales bottlenecks",
-              desc: "Founders are the best closers, but they can't scale. Sales stalls when every deal depends on one person."
-            },
-            {
-              icon: Zap,
-              title: "Inefficient follow-ups and lost deals",
-              desc: "Leads go cold when follow-up is slow or inconsistent. Lost deals often come down to timing and accountability."
-            }
-          ].map((item, i) => (
-            <div key={i} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-teal-200 transition-colors">
-              <div className="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-6">
-                <item.icon className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-              <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+        <div className="container-padding relative z-10 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <div className="mb-6 flex justify-center">
+              <img
+                src="/logo.jpeg"
+                alt="CONVERRA GROWTH PARTNERS logo"
+                className="h-12 w-auto rounded-xl object-contain md:h-14"
+              />
             </div>
-          ))}
-        </div>
-      </Section>
 
-      {/* Solution/Dashboard Section */}
-      <Section id="solution" background="light">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium mb-4">
-            <Zap className="w-4 h-4" />
-            The Converra Advantage
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Data-Driven Sales Acceleration
-          </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            We combine human expertise with cutting-edge sales technology to fill your pipeline with qualified opportunities.
-          </p>
-        </div>
-
-        <DashboardMock />
-      </Section>
-
-      {/* How It Works */}
-      <Section id="process">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                Our Proven Methodology
-              </h2>
-              <p className="text-lg text-slate-500 mb-8">
-                We don't just "make calls". We build a comprehensive go-to-market engine tailored to your ideal customer profile.
-              </p>
-              
-              <div className="space-y-8">
-                {[
-                  { step: "01", title: "Strategy & Audit", desc: "We analyze your TAM, messaging, and current sales stack." },
-                  { step: "02", title: "Systems Setup", desc: "We deploy our proprietary tech stack and data enrichment tools." },
-                  { step: "03", title: "Campaign Launch", desc: "Multi-channel outreach via email, LinkedIn, and phone." },
-                  { step: "04", title: "Scale & Optimize", desc: "Continuous A/B testing and doubling down on what works." },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="text-2xl font-bold text-teal-500/30 font-display">{item.step}</div>
-                    <div>
-                      <h4 className="text-lg font-bold text-slate-900">{item.title}</h4>
-                      <p className="text-slate-500">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-teal-500 to-indigo-500 rounded-2xl blur-2xl opacity-20" />
-              <div className="relative bg-white border border-slate-100 rounded-2xl p-8 shadow-xl">
-                <div className="space-y-4">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="flex items-center gap-4 p-4 rounded-lg bg-slate-50 border border-slate-100">
-                      <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 font-bold">
-                        {i === 1 ? "A" : i === 2 ? "B" : "C"}
-                      </div>
-                      <div className="flex-1">
-                        <div className="h-2 w-24 bg-slate-200 rounded mb-2" />
-                        <div className="h-2 w-32 bg-slate-100 rounded" />
-                      </div>
-                      <CheckCircle className="w-5 h-5 text-teal-500" />
-                    </div>
-                  ))}
-                  <div className="mt-8 p-4 bg-navy-900 rounded-lg text-white text-center">
-                    <div className="text-3xl font-bold mb-1">14 Days</div>
-                    <div className="text-sm text-slate-400">Average Time to First Deal</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Comparison Table */}
-      <Section id="results" background="light">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Why We Are Different
-          </h2>
-        </div>
-
-        <div className="overflow-x-auto">
-          <div className="min-w-[700px] bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
-            <div className="grid grid-cols-3 bg-slate-50 p-6 border-b border-slate-100">
-              <div className="font-bold text-slate-500">Feature</div>
-              <div className="font-bold text-slate-500">Traditional Agency</div>
-              <div className="font-bold text-teal-600 text-lg">Converra</div>
-            </div>
-            {[
-              { feature: "Retainer Fees", bad: "Yes", good: "No" },
-              { feature: "Revenue Alignment", bad: "No", good: "Yes" },
-              { feature: "Dedicated Associate", bad: "Optional", good: "Assigned" },
-              { feature: "Reporting Transparency", bad: "Limited", good: "Structured" },
-            ].map((row, i) => (
-              <div key={i} className="grid grid-cols-3 p-6 border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                <div className="font-medium text-slate-700">{row.feature}</div>
-                <div className="text-slate-500">{row.bad}</div>
-                <div className="font-semibold text-teal-600 flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4" />
-                  {row.good}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Beyond Close */}
-      <Section>
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
-            Beyond Just The Close
-          </h2>
-          <p className="text-lg text-slate-500 mb-12">
-            We think about the entire revenue lifecycle, not just the initial meeting.
-          </p>
-
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 relative">
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-slate-100 -z-10 -translate-y-1/2" />
-            
-            {[
-              { icon: Target, label: "Acquire" },
-              { icon: MessageSquare, label: "Engage" },
-              { icon: Rocket, label: "Close" },
-              { icon: ShieldCheck, label: "Retain" },
-              { icon: LayoutGrid, label: "Expand" },
-            ].map((step, i) => (
-              <div key={i} className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm w-32 flex flex-col items-center gap-3 z-10">
-                <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-600">
-                  <step.icon className="w-5 h-5" />
-                </div>
-                <div className="font-bold text-slate-800">{step.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Clients Section */}
-      <Section id="clients" background="light">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Trusted by SaaS & Tech Leaders
-          </h2>
-          <p className="text-lg text-slate-500 mb-12">
-            We partner with companies that are ready for performance-based revenue growth.
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-70">
-            {/* Placeholder for client logos — replace with real logos when provided */}
-            {["Client 1", "Client 2", "Client 3"].map((label, i) => (
-              <div key={i} className="h-12 w-32 bg-slate-200 rounded-lg flex items-center justify-center text-slate-400 text-sm font-medium">
-                {label}
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Contact Section */}
-      <Section id="contact" background="navy">
-        <div className="grid lg:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Scale Your Revenue?
-            </h2>
-            <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-              Book a free 30-minute strategy call to see if Converra is the right partner for your growth goals. We only work with 5 new partners each quarter to ensure quality.
+            <p className="text-sm font-medium text-teal-300 tracking-wide mb-4">
+              Conversation. Conviction. Conversion.
             </p>
-            
-            <div className="space-y-6">
-              {[
-                "Revenue Audit",
-                "Dedicated Associate",
-                "Demo Support Setup",
-                "Monthly Reporting"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">
-                    <CheckCircle className="w-4 h-4" />
-                  </div>
-                  <span className="text-slate-300">{item}</span>
-                </div>
-              ))}
-            </div>
 
-            <div className="mt-12 p-6 bg-slate-800 rounded-xl border border-slate-700">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center font-bold text-white">
-                  JD
-                </div>
-                <div>
-                  <p className="text-slate-300 italic mb-4">
-                    "Converra completely transformed our outbound motion. We went from booking 5 demos a month to over 40 within 90 days."
-                  </p>
-                  <div className="font-bold text-white">John Doe</div>
-                  <div className="text-sm text-teal-400">CEO, TechStart Inc.</div>
-                </div>
+            <div className="mb-6 flex justify-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-teal-200 backdrop-blur">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                🟢 Accepting New Partners for Q4
               </div>
             </div>
+
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.12] text-white mb-6">
+              Strategic Revenue Partners for Growth-Focused Companies
+            </h1>
+
+            <p className="text-base md:text-lg text-slate-200 leading-relaxed mb-8">
+              We help SaaS and technology businesses turn warm leads into predictable revenue through dedicated sales execution aligned with business outcomes.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-10">
+              <Button
+                onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
+                className="h-12 px-6 text-base bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
+              >
+                Book Strategy Call
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => scrollTo("problem")}
+                className="h-12 px-6 text-base border-white/20 text-white hover:bg-white/10 bg-transparent"
+              >
+                Learn More
+              </Button>
+            </div>
+
+            <div className="text-sm text-slate-300">
+              Trusted by growing SaaS/Tech teams to accelerate revenue without expanding internal sales bandwidth.
+            </div>
+          </motion.div>
+        </div>
+      </Section>
+
+      {/* 🟥 PROBLEM SECTION */}
+      <Section id="problem" className="bg-red-50/70 dark:bg-red-950/20">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-4">
+            Revenue Shouldn’t Stall Because Sales Bandwidth Is Limited
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+            Many high-potential SaaS and tech companies struggle to scale revenue consistently, not because of product limitations, but due to gaps in sales execution.
+          </p>
+
+          <div className="rounded-2xl border border-red-200/60 dark:border-red-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8">
+            <div className="font-semibold text-slate-800 dark:text-slate-100 mb-4">Common challenges include:</div>
+            <ul className="space-y-3 text-slate-700 dark:text-slate-200">
+              {[
+                "Warm leads not converting consistently",
+                "Founder-dependent sales cycles",
+                "High customer acquisition costs",
+                "Sales teams stretched across too many priorities",
+                "Lack of focused follow-ups and pipeline movement",
+                "Difficulty expanding into new markets",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-red-500 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div>
-            <ContactForm />
+          <p className="text-lg text-slate-600 dark:text-slate-300 mt-8">
+            Without structured and dedicated sales execution, growth becomes unpredictable and opportunities slip through the cracks.
+          </p>
+        </motion.div>
+      </Section>
+
+      {/* 🟩 SOLUTION SECTION */}
+      <Section id="solution" className="bg-emerald-50/70 dark:bg-emerald-950/15">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl mx-auto"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-4">
+            A Performance-Driven Revenue Partnership Model
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+            Converra acts as an extended revenue arm for your business.
+          </p>
+          <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+            We collaborate with your team to represent your product, engage qualified prospects, and drive revenue growth through dedicated sales execution — aligned with your business goals and market positioning.
+          </p>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="space-y-4 text-slate-700 dark:text-slate-200 leading-relaxed">
+              <p>
+                For many growing startups and technology companies, scaling revenue internally becomes a challenge. Founders often find themselves deeply involved in sales operations — hiring teams, managing attrition, monitoring pipelines, and constantly pushing for conversions.
+              </p>
+              <p>
+                While sales is critical, excessive founder involvement in day-to-day revenue operations can divert attention from what truly drives long-term success: building the product, improving customer experience, and strengthening core operations.
+              </p>
+              <p className="font-semibold text-slate-900 dark:text-white">Converra bridges this gap.</p>
+              <p>
+                Our partnership model is designed to support your existing sales efforts while enabling additional revenue expansion without increasing internal complexity.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-emerald-200/60 dark:border-emerald-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8">
+              <div className="font-semibold text-slate-800 dark:text-slate-100 mb-4">Our approach ensures:</div>
+              <ul className="space-y-3 text-slate-700 dark:text-slate-200">
+                {[
+                  "Founders and leadership stay focused on product innovation and strategic growth",
+                  "Internal teams operate without added pressure or bandwidth constraints",
+                  "Dedicated sales support to drive additional revenue streams",
+                  "Consistent prospect engagement and pipeline progression",
+                  "Performance-aligned execution focused on measurable outcomes",
+                  "Scalable growth without the challenges of constant hiring and sales team management",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
+
+          <div className="mt-10 space-y-2 text-slate-700 dark:text-slate-200">
+            <p>Your internal team continues to drive core sales.</p>
+            <p className="font-semibold text-slate-900 dark:text-white">Converra enables the next phase of revenue scale.</p>
+            <p>You focus on building the business.</p>
+            <p>We focus on expanding its revenue potential.</p>
+          </div>
+        </motion.div>
+      </Section>
+
+      {/* 🟨 PROCESS SECTION */}
+      <Section id="process" className="bg-amber-50/70 dark:bg-amber-950/15">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl mx-auto"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-10">
+            How We Drive Predictable Revenue Growth
+          </h2>
+
+          <div className="space-y-6">
+            {[
+              {
+                num: "1️⃣",
+                title: "Understand & Align",
+                desc: "We begin by developing a deep understanding of your product, target audience, market positioning, and revenue objectives. This alignment ensures every sales initiative reflects your brand value and speaks to the right customers.",
+              },
+              {
+                num: "2️⃣",
+                title: "Dedicated Sales Ownership",
+                desc: "A trained sales professional is exclusively allocated to your business to represent your offerings in the market. This dedicated ownership ensures focused attention, consistent follow-ups, personalized prospect engagement, and stronger relationship building with potential clients.",
+              },
+              {
+                num: "3️⃣",
+                title: "Structured Sales Execution",
+                desc: "Our team manages end-to-end outreach — initiating conversations, nurturing prospects, addressing objections, and driving steady pipeline progression through disciplined execution and proven sales practices.",
+              },
+              {
+                num: "4️⃣",
+                title: "Revenue-Focused Collaboration",
+                desc: "We work closely with founders, leadership teams, and internal sales units to ensure our efforts complement existing strategies while unlocking additional revenue channels without disrupting internal workflows.",
+              },
+              {
+                num: "5️⃣",
+                title: "Campaign & Lead Generation Support",
+                desc: "When required, Converra also supports targeted marketing initiatives such as webinar campaigns, outreach programs, and multi-channel lead generation activities. This enables businesses to access new prospect pools while ensuring a consistent flow of qualified opportunities into the sales pipeline.",
+              },
+              {
+                num: "6️⃣",
+                title: "Performance-Led Growth",
+                desc: "Our engagement model is aligned with measurable outcomes — ensuring accountability, sustained momentum, and mutually beneficial revenue expansion.",
+              },
+            ].map((step) => (
+              <div
+                key={step.num}
+                className="rounded-2xl border border-amber-200/60 dark:border-amber-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="text-2xl md:text-3xl leading-none">{step.num}</div>
+                  <div className="min-w-0">
+                    <div className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2">
+                      {step.title}
+                    </div>
+                    <div className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                      {step.desc}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </Section>
+
+      {/* 🟪 RESULTS SECTION */}
+      <Section id="results" className="bg-purple-50/70 dark:bg-purple-950/15">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl mx-auto"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-4">
+            Turning Opportunities Into Measurable Business Outcomes
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+            Converra partnerships are built on accountability, execution discipline, and sustained revenue impact. Our focus goes beyond supporting sales activities — we work alongside businesses to create tangible growth outcomes that strengthen their market position.
+          </p>
+
+          <div className="rounded-2xl border border-purple-200/60 dark:border-purple-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8">
+            <div className="font-semibold text-slate-800 dark:text-slate-100 mb-4">
+              Organizations partnering with Converra experience:
+            </div>
+            <ul className="space-y-3 text-slate-700 dark:text-slate-200">
+              {[
+                "📈 Higher conversion of qualified leads into paying customers",
+                "📈 Stronger, well-managed pipelines with consistent opportunity flow",
+                "📈 Expanded market reach and access to new customer segments",
+                "📈 Reduced pressure on internal teams and leadership bandwidth",
+                "📈 Improved sales consistency through dedicated execution",
+                "📈 Additional revenue channels that accelerate overall business growth",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-1 text-purple-700 dark:text-purple-300">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="text-lg text-slate-600 dark:text-slate-300 mt-8">
+            We don’t operate as an external vendor. We function as a committed revenue partner focused on meaningful business results.
+          </p>
+        </motion.div>
+      </Section>
+
+      {/* 🟫 IDEAL CLIENTS SECTION */}
+      <Section id="ideal-clients" className="bg-amber-100/70 dark:bg-[#2a1c0a]">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-700 dark:text-white mb-4">
+            Who We Work Best With
+          </h2>
+          <div className="rounded-2xl border border-amber-300/50 dark:border-amber-900/40 bg-white/70 dark:bg-slate-900/40 backdrop-blur p-6 md:p-8">
+            <div className="font-semibold text-slate-800 dark:text-slate-100 mb-4">Converra partners with:</div>
+            <ul className="space-y-3 text-slate-700 dark:text-slate-200">
+              {[
+                "SaaS companies scaling beyond early growth stages",
+                "Technology firms expanding into new markets",
+                "Startups with strong products but limited sales bandwidth",
+                "Businesses seeking performance-driven revenue partnerships",
+                "Companies looking to unlock additional revenue channels",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-amber-700 dark:bg-amber-400 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="text-lg text-slate-700 dark:text-slate-200 mt-8">
+            If growth is your priority but internal sales capacity is limited, Converra is built for you.
+          </p>
+        </motion.div>
+      </Section>
+
+      {/* ⬛ CTA SECTION */}
+      <Section id="cta" className="bg-slate-950 text-white">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Let’s Build Your Next Revenue Growth Phase
+          </h2>
+          <p className="text-lg text-slate-300 mb-8">
+            If your business is ready to scale revenue through focused sales execution and performance-driven partnerships, we’re ready to work with you.
+          </p>
+
+          <div className="flex justify-center mb-6">
+            <Button
+              onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
+              className="h-12 px-8 text-base bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25"
+            >
+              Book a Strategy Call
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+
+          <p className="text-slate-300">
+            Discuss your growth goals and explore how Converra can support your revenue expansion.
+          </p>
+        </motion.div>
       </Section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-800 py-12 text-slate-400">
+      <footer id="footer-contact" className="bg-slate-900 border-t border-slate-800 py-12 text-slate-400">
         <div className="container-padding">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div className="col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl font-bold text-white font-display uppercase tracking-wide">Converra</span>
+          <div className="grid lg:grid-cols-5 gap-10 mb-12 items-start">
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xl font-bold text-white font-display uppercase tracking-wide">
+                  Convera Growth Partners
+                </span>
               </div>
-              <p className="text-teal-400 text-sm font-medium mb-2">Conversation. Conviction. Conversion.</p>
-              <p className="max-w-xs text-sm text-slate-400">
-                Performance-based revenue partners for SaaS & tech. We convert warm leads into predictable revenue — no retainers.
+              <p className="text-sm text-slate-300 mb-2">
+                Strategic Revenue Partnerships for Growth-Focused Businesses
+              </p>
+              <p className="text-teal-400 text-sm font-medium">
+                Conversation. Conviction. Conversion.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-bold text-white mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-teal-400 transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Careers</a></li>
-                <li><a href="#contact" className="hover:text-teal-400 transition-colors">Contact</a></li>
+                <li><a href="#problem" className="hover:text-teal-400 transition-colors">Problem</a></li>
+                <li><a href="#solution" className="hover:text-teal-400 transition-colors">Solution</a></li>
+                <li><a href="#process" className="hover:text-teal-400 transition-colors">Process</a></li>
+                <li><a href="#results" className="hover:text-teal-400 transition-colors">Results</a></li>
+                <li><a href="#ideal-clients" className="hover:text-teal-400 transition-colors">Ideal Clients</a></li>
               </ul>
             </div>
-            
-            <div>
-              <h4 className="font-bold text-white mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Terms of Service</a></li>
-              </ul>
+
+            <div className="lg:col-span-2">
+              <h4 className="font-bold text-white mb-4">Contact</h4>
+              <ContactForm />
             </div>
           </div>
           
