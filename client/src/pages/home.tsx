@@ -95,7 +95,7 @@ export default function Home() {
       </Section>
 
       {/* 🟥 PROBLEM SECTION */}
-      <Section id="problem" className="bg-red-50/70 dark:bg-red-950/20">
+      <Section id="problem" className="bg-slate-50 dark:bg-slate-900">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export default function Home() {
       </Section>
 
       {/* 🟩 SOLUTION SECTION */}
-      <Section id="solution" className="bg-emerald-50/70 dark:bg-emerald-950/15">
+      <Section id="solution" className="bg-slate-50 dark:bg-slate-900">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +198,7 @@ export default function Home() {
       </Section>
 
       {/* 🟨 PROCESS SECTION */}
-      <Section id="process" className="bg-amber-50/70 dark:bg-amber-950/15">
+      <Section id="process" className="bg-slate-50 dark:bg-slate-900">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -265,7 +265,7 @@ export default function Home() {
       </Section>
 
       {/* 🟪 RESULTS SECTION */}
-      <Section id="results" className="bg-purple-50/70 dark:bg-purple-950/15">
+      <Section id="results" className="bg-slate-50 dark:bg-slate-900">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -308,7 +308,7 @@ export default function Home() {
       </Section>
 
       {/* 🟫 IDEAL CLIENTS SECTION */}
-      <Section id="ideal-clients" className="bg-amber-100/70 dark:bg-[#2a1c0a]">
+      <Section id="ideal-clients" className="bg-slate-50 dark:bg-slate-900">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
