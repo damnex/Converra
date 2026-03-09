@@ -154,4 +154,14 @@
     pointer-events: none;
     z-index: 0;
   }
+
+  /* Subtle floating animation for metric cards */
+  .card-float {
+    animation: card-float 4s ease-in-out infinite;
+  }
+
+  @keyframes card-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
 }

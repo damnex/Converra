@@ -239,67 +239,118 @@ export default function Home() {
         </motion.div>
       </Section>
 
-      {/* 🟩 SOLUTION SECTION */}
+      {/* SOLUTION SECTION — 2-col: headline + 3 feature blocks | 3 metric cards */}
       <Section
         id="solution"
-        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
       >
+        {/* Soft gradient glow behind cards */}
+        <div className="absolute top-1/2 right-0 w-[500px] h-[400px] -translate-y-1/2 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="max-w-5xl mx-auto"
+          className="relative max-w-6xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            A Performance-Driven Revenue Partnership Model
-          </h2>
-          <p className="text-lg text-slate-300 mb-6">
-            Converra acts as an extended revenue arm for your business.
-          </p>
-          <p className="text-slate-200 leading-relaxed mb-6">
-            We collaborate with your team to represent your product, engage qualified prospects, and drive revenue growth through dedicated sales execution — aligned with your business goals and market positioning.
-          </p>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+            {/* Left: headline, short description, 3 feature blocks */}
+            <div className="space-y-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                A Performance-Driven Revenue Partnership Model
+              </h2>
+              <p className="text-slate-300 text-base lg:text-lg leading-relaxed">
+                Converra acts as your extended revenue arm. We align with your goals, represent your product, and drive growth through dedicated sales execution — without adding internal complexity.
+              </p>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="space-y-4 text-slate-200 leading-relaxed">
-              <p>
-                For many growing startups and technology companies, scaling revenue internally becomes a challenge. Founders often find themselves deeply involved in sales operations — hiring teams, managing attrition, monitoring pipelines, and constantly pushing for conversions.
-              </p>
-              <p>
-                While sales is critical, excessive founder involvement in day-to-day revenue operations can divert attention from what truly drives long-term success: building the product, improving customer experience, and strengthening core operations.
-              </p>
-              <p className="font-semibold text-white">Converra bridges this gap.</p>
-              <p>
-                Our partnership model is designed to support your existing sales efforts while enabling additional revenue expansion without increasing internal complexity.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl p-6 md:p-8 shadow-xl shadow-black/40">
-              <div className="font-semibold text-white mb-4">Our approach ensures:</div>
-              <ul className="space-y-3 text-slate-200">
+              <div className="space-y-4">
                 {[
-                  "Founders and leadership stay focused on product innovation and strategic growth",
-                  "Internal teams operate without added pressure or bandwidth constraints",
-                  "Dedicated sales support to drive additional revenue streams",
-                  "Consistent prospect engagement and pipeline progression",
-                  "Performance-aligned execution focused on measurable outcomes",
-                  "Scalable growth without the challenges of constant hiring and sales team management",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
-                    <span>{item}</span>
-                  </li>
+                  {
+                    icon: TrendingUp,
+                    title: "Revenue Expansion",
+                    desc: "Dedicated sales support and pipeline progression so you unlock additional revenue streams.",
+                  },
+                  {
+                    icon: Zap,
+                    title: "Operational Efficiency",
+                    desc: "Internal teams stay focused; no added pressure or bandwidth strain.",
+                  },
+                  {
+                    icon: Target,
+                    title: "Predictable Growth",
+                    desc: "Performance-aligned execution and measurable outcomes, without constant hiring.",
+                  },
+                ].map((block, i) => (
+                  <motion.div
+                    key={block.title}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="flex gap-4 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-4"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-400">
+                      <block.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">{block.title}</h3>
+                      <p className="text-sm text-slate-400 leading-relaxed">{block.desc}</p>
+                    </div>
+                  </motion.div>
                 ))}
-              </ul>
-            </div>
-          </div>
+              </div>
 
-          <div className="mt-10 space-y-2 text-slate-200">
-            <p>Your internal team continues to drive core sales.</p>
-            <p className="font-semibold text-white">Converra enables the next phase of revenue scale.</p>
-            <p>You focus on building the business.</p>
-            <p>We focus on expanding its revenue potential.</p>
+              <p className="text-slate-400 text-sm pt-2">
+                Your team drives core sales. <span className="text-white font-medium">Converra enables the next phase of scale.</span>
+              </p>
+            </div>
+
+            {/* Right: 3 metric cards — glass, cyan glow, hover, floating */}
+            <div className="space-y-4 lg:pt-0">
+              {[
+                {
+                  icon: TrendingUp,
+                  value: 142,
+                  suffix: "%",
+                  label: "Average revenue uplift for partners",
+                },
+                {
+                  icon: BarChart3,
+                  value: 3.2,
+                  suffix: "x",
+                  label: "Pipeline consistency improvement",
+                },
+                {
+                  icon: Users,
+                  value: 98,
+                  suffix: "%",
+                  label: "Client satisfaction rate",
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.label}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
+                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                  className="group relative rounded-2xl border border-cyan-500/20 bg-slate-900/60 backdrop-blur-xl p-5 shadow-xl shadow-black/30 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-cyan-500/15 hover:shadow-xl card-float"
+                  style={{ animationDelay: `${i * 0.2}s` }}
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="relative">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-400 mb-3">
+                      <card.icon className="h-4 w-4" />
+                    </div>
+                    <div className="text-3xl md:text-4xl font-bold text-white tabular-nums">
+                      <AnimatedCounter value={card.value} suffix={card.suffix} duration={2} />
+                    </div>
+                    <p className="text-sm text-slate-400 mt-1">{card.label}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </Section>
