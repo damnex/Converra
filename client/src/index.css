@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -60,11 +58,11 @@
 @layer base {
   body {
     @apply bg-background text-foreground antialiased selection:bg-[#3399FF]/20 selection:text-[#0A2540];
-    font-family: 'Inter', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Manrope', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     @apply tracking-tight text-navy-700 font-bold;
   }
 }
