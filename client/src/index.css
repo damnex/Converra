@@ -186,6 +186,12 @@
     transform: translateY(-2px);
   }
   .results-metrics-glow {
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(51, 153, 255, 0.18) 0%, transparent 60%);
+    background: radial-gradient(
+      ellipse 120% 100% at 50% 20%,
+      rgba(51, 153, 255, 0.12) 0%,
+      rgba(51, 153, 255, 0.05) 35%,
+      rgba(51, 153, 255, 0.02) 55%,
+      transparent 75%
+    );
   }
 }

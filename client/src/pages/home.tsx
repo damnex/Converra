@@ -468,7 +468,7 @@ export default function Home() {
         id="results"
         className="relative bg-[#0A2540] text-slate-100 overflow-hidden"
       >
-        {/* Subtle gradient glow behind metrics */}
+        {/* Soft gradient glow — smooth falloff, no visible seam */}
         <div className="results-metrics-glow absolute inset-0 pointer-events-none z-0" aria-hidden />
 
         <motion.div
