@@ -98,7 +98,7 @@ export function Navbar() {
             onClick={() => openBookStrategyCall(scrollToContact)}
             className="bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transition-all duration-300"
           >
-            Get Started
+            BOOK A STRATEGY CALL
           </Button>
         </div>
 
@@ -142,7 +142,7 @@ export function Navbar() {
                   onClick={() => openBookStrategyCall(scrollToContact)}
                   className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold"
                 >
-                  Get Started
+                  BOOK A STRATEGY CALL
                 </Button>
               </div>
             </SheetContent>
