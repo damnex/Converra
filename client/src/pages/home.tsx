@@ -627,7 +627,7 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <Section
         id="testimonials"
-        className="relative bg-[#0A2540] text-slate-100"
+        className="relative bg-gradient-to-b from-[#0A2540] via-[#0e2f55] to-[#0A2540] text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -679,7 +679,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-lg shadow-slate-900/20 hover:shadow-xl hover:border-[#3399FF]/30 hover:shadow-[#3399FF]/10 transition-all duration-300"
+                className="rounded-2xl border border-sky-200/60 bg-gradient-to-br from-sky-50 via-white to-blue-50/80 p-6 shadow-lg shadow-slate-900/20 hover:shadow-xl hover:border-[#3399FF]/30 hover:shadow-[#3399FF]/10 transition-all duration-300"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(t.stars)].map((_, j) => (
@@ -700,16 +700,16 @@ export default function Home() {
       {/* CTA SECTION — light card for clarity and balance */}
       <Section
         id="cta"
-        className="relative overflow-hidden bg-[#0A2540] !py-14 md:!py-20"
+        className="relative overflow-hidden bg-gradient-to-b from-[#0A2540] via-[#0d2a4a] to-[#0A2540] !py-14 md:!py-20"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3399FF]/8 via-transparent to-[#0A2540]" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3399FF]/10 via-[#3399FF]/5 to-[#0A2540]" aria-hidden />
         <div className="container-padding relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center rounded-2xl border border-slate-200/80 bg-white px-6 py-10 sm:px-12 sm:py-14 shadow-xl shadow-slate-900/25"
+            className="max-w-3xl mx-auto text-center rounded-2xl border border-sky-200/60 bg-gradient-to-br from-sky-50 via-white to-blue-50/80 px-6 py-10 sm:px-12 sm:py-14 shadow-xl shadow-slate-900/25"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Let’s build your next revenue growth phase
