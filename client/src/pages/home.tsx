@@ -627,7 +627,7 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <Section
         id="testimonials"
-        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
+        className="relative bg-[#0A2540] text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -640,29 +640,35 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               What partners say about us
             </h2>
-            <p className="text-lg text-slate-400 max-w-xl mx-auto">
+            <p className="text-lg text-slate-300 max-w-xl mx-auto">
               Real results from teams who scaled revenue with Converra.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                quote: "Converra completely transformed our outbound motion. We went from booking 5 demos a month to over 40 within 90 days.",
-                name: "Sarah Chen",
-                role: "CEO, TechFlow",
+                quote: "One of the things we appreciated most was how quickly the team understood our product. The conversations they initiated with prospects were relevant and thoughtful.",
+                name: "Ananya Iyer",
+                role: "Co-Founder, StackBridge Technologies",
                 stars: 5,
               },
               {
-                quote: "Finally, a revenue partner that acts like an extension of our team. Transparent, accountable, and results-driven.",
-                name: "Marcus Webb",
-                role: "VP Sales, ScaleOps",
+                quote: "We had marketing generating interest but needed more consistency in follow-ups and outreach. Converra helped bring that discipline into our pipeline.",
+                name: "Vikram Reddy",
+                role: "VP Sales, DataGrid Labs",
                 stars: 5,
               },
               {
-                quote: "We needed to scale without hiring. Converra gave us dedicated execution and real pipeline visibility. Game changer.",
-                name: "Priya Sharma",
-                role: "Founder, DataStack",
+                quote: "What stood out was the ownership they took in representing our product. It felt less like outsourcing and more like an extension of our internal effort.",
+                name: "Ranjith Kumar",
+                role: "CEO, Cuephoria Tech",
+                stars: 5,
+              },
+              {
+                quote: "We wanted to expand our outreach without immediately building a larger sales team. Converra helped us explore that path while maintaining focus on our core operations.",
+                name: "Arjun Nair",
+                role: "Co-Founder, CloudAxis Systems",
                 stars: 5,
               },
             ].map((t, i) => (
@@ -671,19 +677,19 @@ export default function Home() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:border-[#3399FF]/20 hover:shadow-[#3399FF]/10 transition-all duration-300"
+                className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-lg shadow-slate-900/20 hover:shadow-xl hover:border-[#3399FF]/30 hover:shadow-[#3399FF]/10 transition-all duration-300"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(t.stars)].map((_, j) => (
                     <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-slate-200 leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-slate-700 leading-relaxed mb-6 text-sm md:text-base">&ldquo;{t.quote}&rdquo;</p>
                 <div>
-                  <div className="font-semibold text-white">{t.name}</div>
-                  <div className="text-sm text-slate-400">{t.role}</div>
+                  <div className="font-semibold text-slate-900">{t.name}</div>
+                  <div className="text-sm text-slate-500">{t.role}</div>
                 </div>
               </motion.div>
             ))}
