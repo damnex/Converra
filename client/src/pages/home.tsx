@@ -697,12 +697,11 @@ export default function Home() {
         </motion.div>
       </Section>
 
-      {/* CTA SECTION — light card for clarity and balance */}
+      {/* CTA SECTION — same navy as page, card stands out */}
       <Section
         id="cta"
-        className="relative overflow-hidden bg-gradient-to-b from-[#0A2540] via-[#0d2a4a] to-[#0A2540] !py-14 md:!py-20"
+        className="relative overflow-hidden bg-[#0A2540] !py-14 md:!py-20"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3399FF]/10 via-[#3399FF]/5 to-[#0A2540]" aria-hidden />
         <div className="container-padding relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
