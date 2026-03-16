@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F9FC] text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0A2540] text-slate-100 overflow-x-hidden">
       <Navbar />
 
       {/* HERO — premium futuristic: deep navy, diagonal gradient wave, radial glows, vertical streaks */}
@@ -126,7 +126,7 @@ export default function Home() {
       {/* FEATURES — glassmorphism grid */}
       <Section
         id="features"
-        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
+        className="relative bg-[#0A2540] text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ export default function Home() {
       {/* PROBLEM SECTION */}
       <Section
         id="problem"
-        className="bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
+        className="bg-[#0A2540] text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -244,10 +244,10 @@ export default function Home() {
       {/* SOLUTION SECTION — 2-col: headline + 3 feature blocks | 3 metric cards */}
       <Section
         id="solution"
-        className="relative overflow-hidden bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
+        className="relative overflow-hidden bg-[#0A2540] text-slate-100"
       >
         {/* Soft gradient glow behind cards */}
-        <div className="absolute top-1/2 right-0 w-[500px] h-[400px] -translate-y-1/2 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[400px] -translate-y-1/2 bg-[#3399FF]/10 rounded-full blur-[100px] pointer-events-none" />
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -340,7 +340,7 @@ export default function Home() {
                   className="group relative rounded-2xl border border-[#3399FF]/25 bg-slate-900/60 backdrop-blur-xl p-5 shadow-xl shadow-black/30 transition-all duration-300 hover:border-[#1f7fe6]/50 hover:shadow-[#3399FF]/20 hover:shadow-xl card-float"
                   style={{ animationDelay: `${i * 0.2}s` }}
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3399FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   <div className="relative">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#3399FF]/20 text-[#3399FF] mb-3">
                       <card.icon className="h-4 w-4" />
@@ -360,7 +360,7 @@ export default function Home() {
       {/* PRODUCT PREVIEW — mock UI / dashboard */}
       <Section
         id="product-preview"
-        className="relative overflow-x-hidden bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
+        className="relative overflow-x-hidden bg-[#0A2540] text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -391,7 +391,7 @@ export default function Home() {
       {/* HOW IT WORKS — 4 steps horizontal */}
       <Section
         id="process"
-        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
+        className="relative bg-[#0A2540] text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -466,7 +466,7 @@ export default function Home() {
       {/* RESULTS — headline, large metrics, outcome cards */}
       <Section
         id="results"
-        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100 overflow-hidden"
+        className="relative bg-[#0A2540] text-slate-100 overflow-hidden"
       >
         {/* Subtle gradient glow behind metrics */}
         <div className="results-metrics-glow absolute inset-0 pointer-events-none z-0" aria-hidden />
@@ -554,7 +554,7 @@ export default function Home() {
       {/* 🟫 IDEAL CLIENTS SECTION */}
       <Section
         id="ideal-clients"
-        className="bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100 !pb-8 md:!pb-12"
+        className="bg-[#0A2540] text-slate-100 !pb-8 md:!pb-12"
       >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -592,7 +592,7 @@ export default function Home() {
       {/* STATS — animated counters */}
       <Section
         id="stats"
-        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100 !pt-8 md:!pt-12"
+        className="relative bg-[#0A2540] text-slate-100 !pt-8 md:!pt-12"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -673,7 +673,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:border-teal-500/20 hover:shadow-teal-500/10 transition-all duration-300"
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:border-[#3399FF]/20 hover:shadow-[#3399FF]/10 transition-all duration-300"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(t.stars)].map((_, j) => (
@@ -694,9 +694,9 @@ export default function Home() {
       {/* CTA SECTION — gradient button with hover glow */}
       <Section
         id="cta"
-        className="relative overflow-hidden bg-[#001733] text-white !py-12 md:!py-16"
+        className="relative overflow-hidden bg-[#0A2540] text-white !py-12 md:!py-16"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-transparent to-white/5" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3399FF]/10 via-transparent to-[#0A2540]" aria-hidden />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
