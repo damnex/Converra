@@ -3,25 +3,19 @@ import { Button } from "@/components/ui/button";
 import { AnimatedCounter } from "@/components/animated-counter";
 import {
   Lightbulb,
-  Cpu,
   TrendingUp,
-  Shield,
   ArrowRight,
   Rocket,
   Layers,
-  Code2,
-  Cloud,
-  Brain,
-  Server,
   Sparkles,
   Users,
   Linkedin,
   Twitter,
   Mail,
   Target,
-  Palette,
-  Terminal,
   Globe,
+  CheckCircle,
+  MessageCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -50,30 +44,11 @@ export default function About() {
     <div className="min-h-screen bg-[#0A2540] text-slate-100 overflow-x-hidden">
       <Navbar />
 
-      {/* 1. Hero — gradient, floating shapes, tagline */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0A2540] via-[#1e3a5f] via-40% to-[#312e81] to-80%" />
-        <div className="about-hero-mesh absolute inset-0 opacity-40" />
+      {/* 1. Hero — same blue wave as home */}
+      <section className="about-hero-wave relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-20">
         <div className="absolute top-20 left-[10%] w-72 h-72 rounded-full bg-[#3399FF]/20 blur-[100px] animate-float" />
-        <div className="absolute bottom-32 right-[15%] w-96 h-96 rounded-full bg-[#8B5CF6]/15 blur-[120px] animate-float-delayed" />
+        <div className="absolute bottom-32 right-[15%] w-96 h-96 rounded-full bg-[#3399FF]/12 blur-[120px] animate-float-delayed" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#3399FF]/10 blur-[150px]" />
-        {/* Floating tech icons in background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[Code2, Layers, Cpu, Cloud].map((Icon, i) => (
-            <motion.div
-              key={i}
-              className="absolute text-white/5"
-              style={{
-                left: `${15 + i * 22}%`,
-                top: `${20 + (i % 3) * 25}%`,
-              }}
-              animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
-              transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Icon className="h-16 w-16 md:h-24 md:w-24" />
-            </motion.div>
-          ))}
-        </div>
         <div className="container-padding relative z-10 text-center max-w-4xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -102,55 +77,71 @@ export default function About() {
         </div>
       </section>
 
-      {/* 2. Mission & Vision — split layout, glass cards, icons */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="container-padding max-w-6xl mx-auto">
+      {/* 2. Who We Are — full content */}
+      <section id="who-we-are" className="relative py-24 md:py-32 overflow-hidden">
+        <div className="container-padding max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           >
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Mission & Vision</h2>
-              <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                Converra operates as an extended revenue arm—we align with your goals, represent your product, and drive growth through dedicated sales execution without adding operational complexity.
-              </p>
-              <p className="text-slate-400 leading-relaxed">
-                When meaningful conversations happen consistently and pipeline movement is structured, revenue growth becomes predictable and scalable.
-              </p>
-            </div>
-            <motion.div
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {[
-                { icon: Lightbulb, label: "Innovation", desc: "New ways to grow revenue" },
-                { icon: Cpu, label: "Technology", desc: "Data-driven execution" },
-                { icon: TrendingUp, label: "Growth", desc: "Scalable outcomes" },
-                { icon: Shield, label: "Security", desc: "Trusted partnership" },
-              ].map(({ icon: Icon, label, desc }) => (
-                <motion.div
-                  key={label}
-                  variants={item}
-                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 hover:border-[#3399FF]/30 transition-all duration-300"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3399FF]/20 text-[#3399FF] mb-3">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-semibold text-white mb-1">{label}</h3>
-                  <p className="text-sm text-slate-400">{desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">Who We Are</h2>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              <strong className="text-white">Converra Growth Partners</strong> is a revenue-focused growth partner for ambitious businesses. We work alongside founders and leadership teams to strengthen sales execution and unlock new revenue opportunities without increasing operational complexity.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              Our focus is simple: help companies expand their market reach, generate meaningful conversations with potential clients, and convert opportunities into measurable business outcomes.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              Rather than functioning as a traditional sales outsourcing firm, Converra operates as an extended revenue arm that collaborates closely with internal teams to drive consistent pipeline movement and business growth.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 3. Company Stats — animated counters */}
+      {/* 3. What We Do — full content + role list */}
+      <section id="what-we-do" className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
+        <div className="container-padding max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">What We Do</h2>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              Many companies have strong products, capable teams, and active marketing efforts — yet revenue growth often remains inconsistent or non-scalable for longer periods.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              The reason is simple: revenue execution requires continuous focus, additional revenue flow, structured outreach, and disciplined pipeline ownership.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed mb-8">
+              Converra supports businesses by creating a dedicated revenue lane for their product or service. We allocate a product-focused sales professional or a small team that deeply understands your offering and represents it in the market. This dedicated resource operates as an extension of your business, engaging prospects, initiating conversations, and managing opportunities from outreach to revenue.
+            </p>
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-8 mb-8">
+              <h3 className="font-semibold text-white mb-4">Our role includes:</h3>
+              <ul className="space-y-3">
+                {[
+                  "Generating and identifying relevant prospects",
+                  "Representing your product with deep understanding",
+                  "Creating and managing a dedicated sales pipeline",
+                  "Driving consistent outreach and follow-ups",
+                  "Converting opportunities into measurable revenue",
+                ].map((bullet) => (
+                  <li key={bullet} className="flex gap-3 text-slate-300">
+                    <CheckCircle className="h-5 w-5 text-[#3399FF] shrink-0 mt-0.5" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              While your internal team continues to handle core relationships, product development, and strategic sales conversations, Converra ensures that new opportunities are continuously entering and moving through the pipeline. This structured approach allows businesses to expand their revenue capacity without constantly building or managing additional internal sales teams.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4. Company Stats — animated counters */}
       <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
         <div className="container-padding max-w-6xl mx-auto">
           <motion.h2
@@ -193,7 +184,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4. Timeline / Journey */}
+      {/* 5. Timeline / Journey */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="container-padding max-w-5xl mx-auto">
           <motion.h2
@@ -238,95 +229,175 @@ export default function About() {
         </div>
       </section>
 
-      {/* 5. Technology Stack — icon grid with hover glow */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
-        <div className="container-padding max-w-5xl mx-auto">
+      {/* 6. Our Approach */}
+      <section id="our-approach" className="relative py-24 md:py-32 overflow-hidden">
+        <div className="container-padding max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">Our Approach</h2>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              At Converra, we believe revenue growth should not depend solely on internal bandwidth or continuous hiring cycles.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              Our approach begins with deeply understanding your product, value proposition, and ideal customer profile. This allows us to represent your offering in the market with clarity and confidence.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              Once aligned, Converra assigns a dedicated sales professional or team that focuses specifically on your product. These resources operate as an extension of your business, building product-level expertise and engaging the right prospects through structured outreach.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              We then establish a separate and focused pipeline for your offering, where conversations, opportunities, and follow-ups are managed consistently to ensure momentum across the sales process.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              While your internal team continues to manage strategic relationships and core deals, Converra focuses on expanding outreach, generating opportunities, and driving additional revenue conversations in parallel. This approach creates a structured and scalable revenue channel, enabling businesses to grow without constantly expanding their internal sales teams.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 7. How we work — expanded steps */}
+      <section id="how-we-work" className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
+        <div className="container-padding max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-white text-center mb-16"
           >
-            Technology & tools
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6"
-          >
-            {[
-              { icon: Layers, label: "React" },
-              { icon: Code2, label: "Next.js" },
-              { icon: Server, label: "Node.js" },
-              { icon: Terminal, label: "Python" },
-              { icon: Brain, label: "AI Tools" },
-              { icon: Cloud, label: "Cloud" },
-            ].map(({ icon: Icon, label }) => (
-              <motion.div
-                key={label}
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-[#3399FF]/40 hover:shadow-[0_0_30px_rgba(51,153,255,0.2)] transition-all duration-300"
-              >
-                <Icon className="h-10 w-10 text-[#3399FF] mb-2" />
-                <span className="text-sm font-medium text-slate-300">{label}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 6. Process Infographic — Idea → Design → Development → Launch */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="container-padding max-w-5xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-white text-center mb-20"
-          >
             How we work
           </motion.h2>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4"
-          >
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Lightbulb, label: "Idea" },
-              { icon: Palette, label: "Design" },
-              { icon: Terminal, label: "Development" },
-              { icon: Rocket, label: "Launch" },
+              { icon: Target, title: "Understand & align", desc: "Deep dive into your product, audience, and revenue objectives so every initiative reflects your brand." },
+              { icon: Users, title: "Dedicated ownership", desc: "A trained sales professional is allocated exclusively to your business for focused execution." },
+              { icon: MessageCircle, title: "Structured execution", desc: "End-to-end outreach, nurturing, and pipeline progression through proven sales practices." },
+              { icon: TrendingUp, title: "Performance-led growth", desc: "Outcomes-based engagement with accountability and sustained revenue expansion." },
             ].map((step, i) => {
               const StepIcon = step.icon;
               return (
-              <div key={step.label} className="flex flex-col md:flex-row items-center">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  key={step.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.15 }}
-                  className="flex flex-col items-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 w-full md:w-auto hover:border-[#3399FF]/30 transition-all duration-300"
+                  transition={{ delay: i * 0.1 }}
+                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-[#3399FF]/30 transition-all duration-300"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#3399FF]/20 text-[#3399FF] mb-3">
-                    <StepIcon className="h-7 w-7" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3399FF]/20 text-[#3399FF] mb-4">
+                    <StepIcon className="h-6 w-6" />
                   </div>
-                  <span className="font-semibold text-white">{step.label}</span>
+                  <h3 className="font-semibold text-white mb-2">{step.title}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{step.desc}</p>
                 </motion.div>
-                {i < 3 && (
-                  <div className="hidden md:flex flex-1 items-center justify-center py-4">
-                    <ArrowRight className="h-6 w-6 text-[#3399FF]/60" />
+              );
+            })}
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-12 flex flex-wrap justify-center items-center gap-3 md:gap-6"
+          >
+            {[
+              { icon: Lightbulb, label: "Idea" },
+              { icon: Layers, label: "Design" },
+              { icon: Rocket, label: "Development" },
+              { icon: Target, label: "Launch" },
+            ].map((step, i) => {
+              const StepIcon = step.icon;
+              return (
+                <div key={step.label} className="flex items-center gap-3 md:gap-6">
+                  <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2">
+                    <StepIcon className="h-5 w-5 text-[#3399FF]" />
+                    <span className="text-sm font-medium text-slate-300">{step.label}</span>
                   </div>
-                )}
-              </div>
-            );
+                  {i < 3 && <ArrowRight className="h-5 w-5 text-[#3399FF]/60 shrink-0" />}
+                </div>
+              );
             })}
           </motion.div>
         </div>
       </section>
 
-      {/* 7. Team — cards with placeholder, name, role, social */}
+      {/* 8. Why Converra Growth Partners */}
+      <section id="why-converra" className="relative py-24 md:py-32 overflow-hidden">
+        <div className="container-padding max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">Why Converra Growth Partners</h2>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              Businesses partner with Converra when they want to strengthen their revenue execution without constantly expanding their internal sales teams. Our model helps organizations create an additional revenue lane where dedicated sales professionals represent their product, initiate meaningful conversations, and manage opportunities through a structured pipeline.
+            </p>
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-8 mb-6">
+              <h3 className="font-semibold text-white mb-4">Companies work with Converra when they want to:</h3>
+              <ul className="space-y-3">
+                {[
+                  "Expand their market outreach and prospect engagement",
+                  "Create a dedicated pipeline for new opportunities",
+                  "Introduce product-focused sales expertise without additional hiring cycles",
+                  "Strengthen consistency in outreach and follow-ups",
+                  "Generate additional revenue opportunities alongside their internal teams",
+                ].map((bullet) => (
+                  <li key={bullet} className="flex gap-3 text-slate-300">
+                    <CheckCircle className="h-5 w-5 text-[#3399FF] shrink-0 mt-0.5" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              By creating a focused and disciplined revenue channel, Converra enables businesses to scale their growth efforts while maintaining clarity and control over their core operations.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 9. Our Philosophy */}
+      <section id="our-philosophy" className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
+        <div className="container-padding max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">Our Philosophy</h2>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              At Converra, we believe revenue growth is not simply about increasing activity — it is about creating the right structure for consistent execution.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              Our philosophy is simple: when meaningful conversations happen consistently, opportunities are nurtured properly, and pipeline movement is structured, revenue growth becomes far more predictable and scalable.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 10. Our Tagline */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="container-padding max-w-2xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-[#3399FF]/30 bg-[#3399FF]/10 backdrop-blur-xl p-10 md:p-12"
+          >
+            <div className="flex justify-center mb-4">
+              <MessageCircle className="h-12 w-12 text-[#3399FF]" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Our Tagline</h2>
+            <p className="text-xl md:text-2xl font-semibold text-[#3399FF] mb-4">Conversation. Conviction. Conversion.</p>
+            <p className="text-slate-300 leading-relaxed">
+              At Converra, growth begins with meaningful conversations, builds through conviction, and ultimately delivers measurable conversion.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 11. Team — cards with placeholder, name, role, social */}
       <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
         <div className="container-padding max-w-5xl mx-auto">
           <motion.h2
@@ -362,7 +433,7 @@ export default function About() {
                 whileHover={{ y: -6 }}
                 className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center hover:border-[#3399FF]/30 hover:shadow-xl hover:shadow-[#3399FF]/10 transition-all duration-300"
               >
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#3399FF]/30 to-[#8B5CF6]/30 mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#3399FF]/40 to-[#0F7F91]/40 mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">
                   {member.name.charAt(0)}
                 </div>
                 <h3 className="font-semibold text-white mb-1">{member.name}</h3>
@@ -384,10 +455,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* 8. CTA — gradient, primary message, button */}
+      {/* 12. CTA — blue gradient, primary message, button */}
       <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3399FF]/20 via-[#8B5CF6]/20 to-[#3399FF]/20" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#8B5CF6]/20 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3399FF]/15 via-[#0F7F91]/10 to-[#3399FF]/15" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#3399FF]/15 rounded-full blur-[120px]" />
         <div className="container-padding relative z-10 max-w-3xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

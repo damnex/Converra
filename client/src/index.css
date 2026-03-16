@@ -193,13 +193,42 @@
     );
   }
 
-  /* About page: hero mesh + floating blobs */
-  .about-hero-mesh {
-    background-image:
-      radial-gradient(at 40% 20%, rgba(51, 153, 255, 0.15) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, rgba(51, 153, 255, 0.1) 0px, transparent 50%);
-    background-size: 100% 100%;
+  /* About page: hero uses same blue wave as home (hero-futuristic) */
+  .about-hero-wave {
+    background-color: #0A2540;
+    position: relative;
+    isolation: isolate;
+  }
+  .about-hero-wave::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      125deg,
+      transparent 0%,
+      rgba(10, 37, 64, 0.9) 10%,
+      rgba(51, 153, 255, 0.28) 35%,
+      rgba(15, 127, 145, 0.3) 60%,
+      transparent 100%
+    );
+    background-size: 200% 200%;
+    animation: hero-gradient-wave 14s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .about-hero-wave::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 80px,
+      rgba(255, 255, 255, 0.015) 80px,
+      rgba(255, 255, 255, 0.015) 81px
+    );
+    pointer-events: none;
+    z-index: 0;
   }
   .animate-float {
     animation: about-float 8s ease-in-out infinite;
