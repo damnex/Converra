@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden">
+    <div className="min-h-screen bg-[#001733] text-slate-100 overflow-x-hidden">
       <Navbar />
 
       {/* HERO — premium futuristic: deep navy, diagonal gradient wave, radial glows, vertical streaks */}
@@ -67,7 +67,7 @@ export default function Home() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
             >
-              <p className="text-sm font-medium text-cyan-400/90 tracking-wide mb-4">
+              <p className="text-sm font-medium text-[#66b3ff] tracking-wide mb-4">
                 Conversation. Conviction. Conversion.
               </p>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-200 backdrop-blur-sm mb-6">
@@ -86,14 +86,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Button
                   onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-                  className="h-12 px-8 text-base bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-xl shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300"
+                  className="h-12 px-8 text-base bg-[#0073e6] hover:bg-[#0080ff] text-white font-semibold shadow-xl shadow-[#0073e6]/40 hover:shadow-[#0080ff]/60 transition-all duration-300"
                 >
                   Get Started
                 </Button>
                 <Button
                   variant="outline"
                   onClick={() => scrollTo("product-preview")}
-                  className="h-12 px-8 text-base border-white/20 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300"
+                  className="h-12 px-8 text-base border-white/20 text-white hover:bg-white/15 bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
                   View Demo
                 </Button>
@@ -126,7 +126,7 @@ export default function Home() {
       {/* FEATURES — glassmorphism grid */}
       <Section
         id="features"
-        className="relative bg-gradient-to-b from-black via-slate-950 to-slate-950 text-slate-100"
+        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -184,9 +184,9 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:shadow-teal-500/10 hover:border-teal-500/20 transition-all duration-300"
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:shadow-[#0073e6]/10 hover:border-[#0073e6]/30 transition-all duration-300"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/20 text-teal-400 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0073e6]/15 text-[#66b3ff] mb-4">
                   <item.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
@@ -200,7 +200,7 @@ export default function Home() {
       {/* PROBLEM SECTION */}
       <Section
         id="problem"
-        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -244,7 +244,7 @@ export default function Home() {
       {/* SOLUTION SECTION — 2-col: headline + 3 feature blocks | 3 metric cards */}
       <Section
         id="solution"
-        className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="relative overflow-hidden bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
       >
         {/* Soft gradient glow behind cards */}
         <div className="absolute top-1/2 right-0 w-[500px] h-[400px] -translate-y-1/2 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -292,7 +292,7 @@ export default function Home() {
                     transition={{ duration: 0.4, delay: i * 0.08 }}
                     className="flex gap-4 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-4"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-400">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0073e6]/15 text-[#66b3ff]">
                       <block.icon className="h-5 w-5" />
                     </div>
                     <div>
@@ -337,12 +337,12 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                  className="group relative rounded-2xl border border-cyan-500/20 bg-slate-900/60 backdrop-blur-xl p-5 shadow-xl shadow-black/30 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-cyan-500/15 hover:shadow-xl card-float"
+                  className="group relative rounded-2xl border border-[#0073e6]/25 bg-slate-900/60 backdrop-blur-xl p-5 shadow-xl shadow-black/30 transition-all duration-300 hover:border-[#0080ff]/50 hover:shadow-[#0073e6]/20 hover:shadow-xl card-float"
                   style={{ animationDelay: `${i * 0.2}s` }}
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   <div className="relative">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-400 mb-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0073e6]/20 text-[#66b3ff] mb-3">
                       <card.icon className="h-4 w-4" />
                     </div>
                     <div className="text-3xl md:text-4xl font-bold text-white tabular-nums">
@@ -360,7 +360,7 @@ export default function Home() {
       {/* PRODUCT PREVIEW — mock UI / dashboard */}
       <Section
         id="product-preview"
-        className="relative overflow-x-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="relative overflow-x-hidden bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -391,7 +391,7 @@ export default function Home() {
       {/* HOW IT WORKS — 4 steps horizontal */}
       <Section
         id="process"
-        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -411,7 +411,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-4 gap-6 relative">
             {/* Connecting line (desktop) */}
-            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-teal-500/50 via-teal-500 to-teal-500/50 z-0" />
+            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[#66b3ff]/40 via-[#0073e6] to-[#66b3ff]/40 z-0" />
 
             {[
               {
@@ -439,21 +439,21 @@ export default function Home() {
                 icon: TrendingUp,
               },
             ].map((item, i) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="relative z-10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center hover:border-teal-500/30 hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-500/20 text-teal-400 font-bold text-sm">
+                <motion.div
+                  key={item.step}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="relative z-10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center hover:border-[#0073e6]/40 hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0073e6]/20 text-[#66b3ff] font-bold text-sm">
                     {item.step}
                   </div>
                 </div>
-                <div className="flex justify-center mb-3">
-                  <item.icon className="h-6 w-6 text-teal-400" />
+                  <div className="flex justify-center mb-3">
+                    <item.icon className="h-6 w-6 text-[#66b3ff]" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
@@ -466,7 +466,7 @@ export default function Home() {
       {/* RESULTS — headline, large metrics, outcome cards */}
       <Section
         id="results"
-        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 overflow-hidden"
+        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100 overflow-hidden"
       >
         {/* Subtle gradient glow behind metrics */}
         <div className="results-metrics-glow absolute inset-0 pointer-events-none z-0" aria-hidden />
@@ -497,7 +497,7 @@ export default function Home() {
                 transition={{ duration: 0.4 }}
                 className="results-metric-card flex flex-col items-center justify-center text-center px-6 py-10 md:py-14"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/20 text-cyan-300 mb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0073e6]/20 text-[#66b3ff] mb-4">
                   <stat.icon className="h-6 w-6" />
                 </div>
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums tracking-tight">
@@ -540,7 +540,7 @@ export default function Home() {
                 transition={{ duration: 0.4 }}
                 className="results-outcome-card p-6 md:p-8"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-300 mb-4">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0073e6]/15 text-[#66b3ff] mb-4">
                   <card.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{card.title}</h3>
@@ -554,7 +554,7 @@ export default function Home() {
       {/* 🟫 IDEAL CLIENTS SECTION */}
       <Section
         id="ideal-clients"
-        className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 !pb-8 md:!pb-12"
+        className="bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100 !pb-8 md:!pb-12"
       >
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -592,7 +592,7 @@ export default function Home() {
       {/* STATS — animated counters */}
       <Section
         id="stats"
-        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 !pt-8 md:!pt-12"
+        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100 !pt-8 md:!pt-12"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -627,7 +627,7 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <Section
         id="testimonials"
-        className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100"
+        className="relative bg-gradient-to-b from-white/10 via-white/5 to-transparent text-slate-100"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -694,9 +694,9 @@ export default function Home() {
       {/* CTA SECTION — gradient button with hover glow */}
       <Section
         id="cta"
-        className="relative overflow-hidden bg-slate-950 text-white !py-12 md:!py-16"
+        className="relative overflow-hidden bg-[#001733] text-white !py-12 md:!py-16"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-950/30 via-transparent to-slate-950" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-transparent to-white/5" aria-hidden />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -718,7 +718,7 @@ export default function Home() {
           >
             <Button
               onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-              className="h-12 sm:h-14 px-8 sm:px-10 text-base sm:text-lg font-semibold bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300 border-0"
+              className="h-12 sm:h-14 px-8 sm:px-10 text-base sm:text-lg font-semibold bg-[#0073e6] hover:bg-[#0080ff] text-white shadow-lg shadow-[#0073e6]/40 hover:shadow-[#0080ff]/60 transition-all duration-300 border-0"
             >
               Book a Strategy Call
               <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -732,7 +732,7 @@ export default function Home() {
       </Section>
 
       {/* FOOTER — Product, Company, Resources, Legal */}
-      <footer id="footer-contact" className="bg-black border-t border-white/10 py-16 text-slate-400">
+      <footer id="footer-contact" className="bg-[#001021] border-t border-white/10 py-16 text-slate-400">
         <div className="container-padding">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-14">
             <div className="col-span-2 md:col-span-4 lg:col-span-2">
@@ -743,41 +743,41 @@ export default function Home() {
               <p className="text-sm text-slate-400 mb-2 max-w-xs">
                 Strategic Revenue Partnerships for Growth-Focused Businesses
               </p>
-              <p className="text-teal-400 text-sm font-medium">Conversation. Conviction. Conversion.</p>
+              <p className="text-[#66b3ff] text-sm font-medium">Conversation. Conviction. Conversion.</p>
             </div>
 
             <div>
               <h4 className="font-semibold text-white mb-4">Product</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#features" className="hover:text-teal-400 transition-colors">Features</a></li>
-                <li><a href="#product-preview" className="hover:text-teal-400 transition-colors">Demo</a></li>
-                <li><a href="#process" className="hover:text-teal-400 transition-colors">How it works</a></li>
+                <li><a href="#features" className="hover:text-[#66b3ff] transition-colors">Features</a></li>
+                <li><a href="#product-preview" className="hover:text-[#66b3ff] transition-colors">Demo</a></li>
+                <li><a href="#process" className="hover:text-[#66b3ff] transition-colors">How it works</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#solution" className="hover:text-teal-400 transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Careers</a></li>
-                <li><a href="#footer-contact" className="hover:text-teal-400 transition-colors">Contact</a></li>
+                <li><a href="#solution" className="hover:text-[#66b3ff] transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-[#66b3ff] transition-colors">Careers</a></li>
+                <li><a href="#footer-contact" className="hover:text-[#66b3ff] transition-colors">Contact</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold text-white mb-4">Resources</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#testimonials" className="hover:text-teal-400 transition-colors">Testimonials</a></li>
-                <li><a href="#results" className="hover:text-teal-400 transition-colors">Results</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Blog</a></li>
+                <li><a href="#testimonials" className="hover:text-[#66b3ff] transition-colors">Testimonials</a></li>
+                <li><a href="#results" className="hover:text-[#66b3ff] transition-colors">Results</a></li>
+                <li><a href="#" className="hover:text-[#66b3ff] transition-colors">Blog</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold text-white mb-4">Legal</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-teal-400 transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-[#66b3ff] transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-[#66b3ff] transition-colors">Terms of Service</a></li>
               </ul>
             </div>
           </div>
@@ -797,7 +797,7 @@ export default function Home() {
                 href="https://www.instagram.com/converra_?igsh=dDI5cThha3h1c3Yw"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-teal-400 transition-colors"
+                className="text-slate-400 hover:text-[#66b3ff] transition-colors"
               >
                 Instagram
               </a>
@@ -805,7 +805,7 @@ export default function Home() {
                 href="https://www.linkedin.com/company/converra/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-teal-400 transition-colors"
+                className="text-slate-400 hover:text-[#66b3ff] transition-colors"
               >
                 LinkedIn
               </a>
