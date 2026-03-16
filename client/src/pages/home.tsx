@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#001733] text-slate-100 overflow-x-hidden">
+    <div className="min-h-screen bg-[#F5F9FC] text-slate-900 overflow-x-hidden">
       <Navbar />
 
       {/* HERO — premium futuristic: deep navy, diagonal gradient wave, radial glows, vertical streaks */}
@@ -67,7 +67,7 @@ export default function Home() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
             >
-              <p className="text-sm font-medium text-[#66b3ff] tracking-wide mb-4">
+              <p className="text-sm font-medium text-[#3399FF] tracking-wide mb-4">
                 Conversation. Conviction. Conversion.
               </p>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-200 backdrop-blur-sm mb-6">
@@ -86,7 +86,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Button
                   onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-                  className="h-12 px-8 text-base bg-[#0073e6] hover:bg-[#0080ff] text-white font-semibold shadow-xl shadow-[#0073e6]/40 hover:shadow-[#0080ff]/60 transition-all duration-300"
+                  className="h-12 px-8 text-base bg-[#3399FF] hover:bg-[#1f7fe6] text-white font-semibold shadow-xl shadow-[#3399FF]/35 hover:shadow-[#1f7fe6]/55 transition-all duration-300"
                 >
                   Get Started
                 </Button>
@@ -184,9 +184,9 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:shadow-[#0073e6]/10 hover:border-[#0073e6]/30 transition-all duration-300"
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl shadow-black/20 hover:shadow-[#3399FF]/10 hover:border-[#3399FF]/30 transition-all duration-300"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0073e6]/15 text-[#66b3ff] mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#3399FF]/15 text-[#3399FF] mb-4">
                   <item.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
@@ -292,7 +292,7 @@ export default function Home() {
                     transition={{ duration: 0.4, delay: i * 0.08 }}
                     className="flex gap-4 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-4"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0073e6]/15 text-[#66b3ff]">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#3399FF]/15 text-[#3399FF]">
                       <block.icon className="h-5 w-5" />
                     </div>
                     <div>
@@ -337,12 +337,12 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                  className="group relative rounded-2xl border border-[#0073e6]/25 bg-slate-900/60 backdrop-blur-xl p-5 shadow-xl shadow-black/30 transition-all duration-300 hover:border-[#0080ff]/50 hover:shadow-[#0073e6]/20 hover:shadow-xl card-float"
+                  className="group relative rounded-2xl border border-[#3399FF]/25 bg-slate-900/60 backdrop-blur-xl p-5 shadow-xl shadow-black/30 transition-all duration-300 hover:border-[#1f7fe6]/50 hover:shadow-[#3399FF]/20 hover:shadow-xl card-float"
                   style={{ animationDelay: `${i * 0.2}s` }}
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   <div className="relative">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0073e6]/20 text-[#66b3ff] mb-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#3399FF]/20 text-[#3399FF] mb-3">
                       <card.icon className="h-4 w-4" />
                     </div>
                     <div className="text-3xl md:text-4xl font-bold text-white tabular-nums">
@@ -411,7 +411,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-4 gap-6 relative">
             {/* Connecting line (desktop) */}
-            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[#66b3ff]/40 via-[#0073e6] to-[#66b3ff]/40 z-0" />
+            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[#3399FF]/30 via-[#3399FF] to-[#3399FF]/30 z-0" />
 
             {[
               {
@@ -445,15 +445,15 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="relative z-10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center hover:border-[#0073e6]/40 hover:bg-white/10 transition-all duration-300"
+                  className="relative z-10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center hover:border-[#3399FF]/40 hover:bg-white/10 transition-all duration-300"
                 >
                   <div className="flex justify-center mb-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0073e6]/20 text-[#66b3ff] font-bold text-sm">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#3399FF]/20 text-[#3399FF] font-bold text-sm">
                     {item.step}
                   </div>
                 </div>
                   <div className="flex justify-center mb-3">
-                    <item.icon className="h-6 w-6 text-[#66b3ff]" />
+                    <item.icon className="h-6 w-6 text-[#3399FF]" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
@@ -497,7 +497,7 @@ export default function Home() {
                 transition={{ duration: 0.4 }}
                 className="results-metric-card flex flex-col items-center justify-center text-center px-6 py-10 md:py-14"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0073e6]/20 text-[#66b3ff] mb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3399FF]/20 text-[#3399FF] mb-4">
                   <stat.icon className="h-6 w-6" />
                 </div>
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums tracking-tight">
@@ -540,7 +540,7 @@ export default function Home() {
                 transition={{ duration: 0.4 }}
                 className="results-outcome-card p-6 md:p-8"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0073e6]/15 text-[#66b3ff] mb-4">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#3399FF]/15 text-[#3399FF] mb-4">
                   <card.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{card.title}</h3>
@@ -718,7 +718,7 @@ export default function Home() {
           >
             <Button
               onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-              className="h-12 sm:h-14 px-8 sm:px-10 text-base sm:text-lg font-semibold bg-[#0073e6] hover:bg-[#0080ff] text-white shadow-lg shadow-[#0073e6]/40 hover:shadow-[#0080ff]/60 transition-all duration-300 border-0"
+              className="h-12 sm:h-14 px-8 sm:px-10 text-base sm:text-lg font-semibold bg-[#3399FF] hover:bg-[#1f7fe6] text-white shadow-lg shadow-[#3399FF]/35 hover:shadow-[#1f7fe6]/55 transition-all duration-300 border-0"
             >
               Book a Strategy Call
               <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -743,41 +743,41 @@ export default function Home() {
               <p className="text-sm text-slate-400 mb-2 max-w-xs">
                 Strategic Revenue Partnerships for Growth-Focused Businesses
               </p>
-              <p className="text-[#66b3ff] text-sm font-medium">Conversation. Conviction. Conversion.</p>
+              <p className="text-[#3399FF] text-sm font-medium">Conversation. Conviction. Conversion.</p>
             </div>
 
             <div>
               <h4 className="font-semibold text-white mb-4">Product</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#features" className="hover:text-[#66b3ff] transition-colors">Features</a></li>
-                <li><a href="#product-preview" className="hover:text-[#66b3ff] transition-colors">Demo</a></li>
-                <li><a href="#process" className="hover:text-[#66b3ff] transition-colors">How it works</a></li>
+                <li><a href="#features" className="hover:text-[#3399FF] transition-colors">Features</a></li>
+                <li><a href="#product-preview" className="hover:text-[#3399FF] transition-colors">Demo</a></li>
+                <li><a href="#process" className="hover:text-[#3399FF] transition-colors">How it works</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#solution" className="hover:text-[#66b3ff] transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-[#66b3ff] transition-colors">Careers</a></li>
-                <li><a href="#footer-contact" className="hover:text-[#66b3ff] transition-colors">Contact</a></li>
+                <li><a href="#solution" className="hover:text-[#3399FF] transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-[#3399FF] transition-colors">Careers</a></li>
+                <li><a href="#footer-contact" className="hover:text-[#3399FF] transition-colors">Contact</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold text-white mb-4">Resources</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#testimonials" className="hover:text-[#66b3ff] transition-colors">Testimonials</a></li>
-                <li><a href="#results" className="hover:text-[#66b3ff] transition-colors">Results</a></li>
-                <li><a href="#" className="hover:text-[#66b3ff] transition-colors">Blog</a></li>
+                <li><a href="#testimonials" className="hover:text-[#3399FF] transition-colors">Testimonials</a></li>
+                <li><a href="#results" className="hover:text-[#3399FF] transition-colors">Results</a></li>
+                <li><a href="#" className="hover:text-[#3399FF] transition-colors">Blog</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold text-white mb-4">Legal</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-[#66b3ff] transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-[#66b3ff] transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-[#3399FF] transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-[#3399FF] transition-colors">Terms of Service</a></li>
               </ul>
             </div>
           </div>
@@ -797,7 +797,7 @@ export default function Home() {
                 href="https://www.instagram.com/converra_?igsh=dDI5cThha3h1c3Yw"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-[#66b3ff] transition-colors"
+                className="text-slate-400 hover:text-[#3399FF] transition-colors"
               >
                 Instagram
               </a>
@@ -805,7 +805,7 @@ export default function Home() {
                 href="https://www.linkedin.com/company/converra/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-[#66b3ff] transition-colors"
+                className="text-slate-400 hover:text-[#3399FF] transition-colors"
               >
                 LinkedIn
               </a>

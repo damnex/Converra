@@ -5,15 +5,15 @@
 @tailwind utilities;
 
 :root {
-  --navy: 211 54% 12%;       /* #0E1E2F */
-  --teal: 174 71% 42%;       /* #1FB6A6 */
-  --light: 216 33% 98%;      /* #F7F9FC */
-  --gray-text: 210 14% 42%;  /* #5C6B7A */
+  --navy: 210 76% 15%;        /* #0A2540 */
+  --teal: 188 81% 31%;        /* #0F7F91 */
+  --light: 210 60% 97%;       /* #F5F9FC */
+  --gray-text: 215 25% 24%;   /* #1F2937 */
 
-  --background: 216 33% 98%;
-  --foreground: 211 54% 12%;
+  --background: 210 60% 97%;  /* Soft White */
+  --foreground: 215 25% 24%;  /* Dark Grey */
   
-  --primary: 174 71% 42%;
+  --primary: 210 76% 15%;     /* Primary: Navy */
   --primary-foreground: 0 0% 100%;
   
   --secondary: 211 54% 12%;
@@ -22,7 +22,7 @@
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
   
-  --accent: 174 71% 42%;
+  --accent: 188 81% 31%;      /* Brand Accent: Teal */
   --accent-foreground: 0 0% 100%;
   
   --destructive: 0 84.2% 60.2%;
@@ -30,7 +30,7 @@
 
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --ring: 174 71% 42%;
+  --ring: 210 76% 15%;
   
   --radius: 0.5rem;
 }
@@ -45,21 +45,21 @@
   --border: 217 32% 18%;
   --input: 217 32% 18%;
 
-  --primary: 174 71% 42%;
+  --primary: 210 76% 15%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 217 32% 12%;
   --secondary-foreground: 210 40% 98%;
 
-  --accent: 174 71% 42%;
+  --accent: 188 81% 31%;
   --accent-foreground: 0 0% 100%;
 
-  --ring: 174 71% 42%;
+  --ring: 210 76% 15%;
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased selection:bg-teal-500/20 selection:text-teal-700;
+    @apply bg-background text-foreground antialiased selection:bg-[#3399FF]/20 selection:text-[#0A2540];
     font-family: 'Inter', sans-serif;
   }
 
@@ -79,20 +79,20 @@
   }
 
   .btn-primary {
-    @apply bg-teal-500 hover:bg-teal-400 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm;
+    @apply bg-[#3399FF] hover:bg-[#1f7fe6] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-[#3399FF]/25 hover:shadow-[#3399FF]/45 hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm;
   }
 
   .btn-secondary {
-    @apply bg-navy-700 hover:bg-navy-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-navy-700/20 hover:shadow-navy-700/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm;
+    @apply bg-[#0A2540] hover:bg-[#0f3155] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-[#0A2540]/25 hover:shadow-[#0A2540]/45 hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm;
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-teal-500/30 border border-transparent;
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#0F7F91]/30 border border-transparent;
   }
 
   /* Futuristic hero: deep navy base + animated diagonal gradient wave */
   .hero-futuristic {
-    background-color: #020b1f;
+    background-color: #0A2540;
     position: relative;
     isolation: isolate;
   }
@@ -104,10 +104,9 @@
     background: linear-gradient(
       125deg,
       transparent 0%,
-      rgba(30, 58, 138, 0.25) 15%,
-      rgba(59, 130, 246, 0.2) 35%,
-      rgba(34, 211, 238, 0.22) 55%,
-      rgba(20, 184, 166, 0.25) 75%,
+      rgba(10, 37, 64, 0.9) 10%,
+      rgba(51, 153, 255, 0.28) 35%,
+      rgba(15, 127, 145, 0.3) 60%,
       transparent 100%
     );
     background-size: 200% 200%;
@@ -165,28 +164,28 @@
     50% { transform: translateY(-4px); }
   }
 
-  /* Results section: dark glass, cyan glow, hover */
+  /* Results section: dark glass, blue glow, hover */
   .results-metric-card {
     @apply rounded-2xl border bg-slate-900/60 backdrop-blur-xl transition-all duration-300;
-    border-color: rgba(34, 211, 238, 0.2);
-    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.08), 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-color: rgba(51, 153, 255, 0.25); /* CTA Blue */
+    box-shadow: 0 0 0 1px rgba(51, 153, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4);
   }
   .results-metric-card:hover {
-    border-color: rgba(34, 211, 238, 0.4);
-    box-shadow: 0 0 24px rgba(34, 211, 238, 0.15), 0 0 0 1px rgba(34, 211, 238, 0.2), 0 12px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(51, 153, 255, 0.5);
+    box-shadow: 0 0 24px rgba(51, 153, 255, 0.2), 0 0 0 1px rgba(51, 153, 255, 0.25), 0 12px 40px rgba(0, 0, 0, 0.5);
     transform: translateY(-2px);
   }
   .results-outcome-card {
     @apply rounded-2xl border bg-slate-900/50 backdrop-blur-xl transition-all duration-300;
-    border-color: rgba(34, 211, 238, 0.15);
-    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.06), 0 4px 24px rgba(0, 0, 0, 0.3);
+    border-color: rgba(51, 153, 255, 0.2);
+    box-shadow: 0 0 0 1px rgba(51, 153, 255, 0.08), 0 4px 24px rgba(0, 0, 0, 0.3);
   }
   .results-outcome-card:hover {
-    border-color: rgba(34, 211, 238, 0.35);
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.12), 0 0 0 1px rgba(34, 211, 238, 0.18), 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-color: rgba(51, 153, 255, 0.45);
+    box-shadow: 0 0 20px rgba(51, 153, 255, 0.18), 0 0 0 1px rgba(51, 153, 255, 0.22), 0 8px 32px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
   }
   .results-metrics-glow {
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(34, 211, 238, 0.12) 0%, transparent 60%);
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(51, 153, 255, 0.18) 0%, transparent 60%);
   }
 }
