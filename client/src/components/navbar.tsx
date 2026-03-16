@@ -45,10 +45,11 @@ export function Navbar() {
         {/* Desktop Menu - Stripe/Vercel style */}
         <div className="hidden md:flex items-center gap-8">
           {[
-            { label: "Features", href: "#features" },
-            { label: "Solution", href: "#solution" },
-            { label: "How It Works", href: "#process" },
-            { label: "Contact", href: "#footer-contact" },
+            { label: "Features", href: "/#features" },
+            { label: "About", href: "/about" },
+            { label: "Solution", href: "/#solution" },
+            { label: "How It Works", href: "/#process" },
+            { label: "Contact", href: "/#footer-contact" },
           ].map(({ label, href }) => (
             <a
               key={label}
@@ -84,17 +85,19 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent>
               <div className="flex flex-col gap-6 mt-10">
-                {["Features", "Solution", "How It Works", "Contact"].map((item) => (
+                {["Features", "About", "Solution", "How It Works", "Contact"].map((item) => (
                   <a
                     key={item}
                     href={
                       item === "Features"
-                        ? "#features"
+                        ? "/#features"
+                        : item === "About"
+                        ? "/about"
                         : item === "Solution"
-                        ? "#solution"
+                        ? "/#solution"
                         : item === "How It Works"
-                        ? "#process"
-                        : "#footer-contact"
+                        ? "/#process"
+                        : "/#footer-contact"
                     }
                     className="text-lg font-medium text-slate-900 dark:text-slate-100"
                   >
