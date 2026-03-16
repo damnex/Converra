@@ -697,44 +697,46 @@ export default function Home() {
         </motion.div>
       </Section>
 
-      {/* CTA SECTION — gradient button with hover glow */}
+      {/* CTA SECTION — light card for clarity and balance */}
       <Section
         id="cta"
-        className="relative overflow-hidden bg-[#0A2540] text-white !py-12 md:!py-16"
+        className="relative overflow-hidden bg-[#0A2540] !py-14 md:!py-20"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3399FF]/10 via-transparent to-[#0A2540]" aria-hidden />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 max-w-2xl mx-auto text-center rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-sm px-6 py-10 sm:px-10 sm:py-12 shadow-xl shadow-black/30"
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
-            Let’s build your next revenue growth phase
-          </h2>
-          <p className="text-slate-300 mb-6 sm:mb-8 max-w-lg mx-auto">
-            If your business is ready to scale revenue through focused sales execution and performance-driven partnerships, we’re ready to work with you.
-          </p>
-
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3399FF]/8 via-transparent to-[#0A2540]" aria-hidden />
+        <div className="container-padding relative z-10">
           <motion.div
-            className="inline-block"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center rounded-2xl border border-slate-200/80 bg-white px-6 py-10 sm:px-12 sm:py-14 shadow-xl shadow-slate-900/25"
           >
-            <Button
-              onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
-              className="h-12 sm:h-14 px-8 sm:px-10 text-base sm:text-lg font-semibold bg-[#3399FF] hover:bg-[#1f7fe6] text-white shadow-lg shadow-[#3399FF]/35 hover:shadow-[#1f7fe6]/55 transition-all duration-300 border-0"
-            >
-              Book a Strategy Call
-              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-            </Button>
-          </motion.div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Let’s build your next revenue growth phase
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+              If your business is ready to scale revenue through focused sales execution and performance-driven partnerships, we’re ready to work with you.
+            </p>
 
-          <p className="text-slate-400 text-sm mt-4">
-            Discuss your growth goals and explore how Converra can support your revenue expansion.
-          </p>
-        </motion.div>
+            <motion.div
+              className="inline-block"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button
+                onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
+                className="h-12 sm:h-14 px-8 sm:px-10 text-base sm:text-lg font-semibold bg-[#3399FF] hover:bg-[#1f7fe6] text-white shadow-lg shadow-[#3399FF]/30 hover:shadow-[#3399FF]/50 transition-all duration-300 border-0"
+              >
+                Book a Strategy Call
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+              </Button>
+            </motion.div>
+
+            <p className="text-slate-500 text-sm mt-6 max-w-md mx-auto">
+              Discuss your growth goals and explore how Converra can support your revenue expansion.
+            </p>
+          </motion.div>
+        </div>
       </Section>
 
       {/* FOOTER — Product, Company, Resources, Legal */}
