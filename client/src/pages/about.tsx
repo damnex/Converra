@@ -1,282 +1,428 @@
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
+import { AnimatedCounter } from "@/components/animated-counter";
 import {
-  Users,
-  Target,
-  Compass,
-  Award,
   Lightbulb,
-  MessageCircle,
-  CheckCircle,
+  Cpu,
+  TrendingUp,
+  Shield,
   ArrowRight,
+  Rocket,
+  Layers,
+  Code2,
+  Cloud,
+  Brain,
+  Server,
+  Sparkles,
+  Users,
+  Linkedin,
+  Twitter,
+  Mail,
+  Target,
+  Palette,
+  Terminal,
+  Globe,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { openBookStrategyCall } from "@/lib/links";
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function About() {
   const scrollToContact = () => {
-    const element = document.getElementById("footer-contact");
-    if (element) element.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById("footer-contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen bg-[#0A2540] text-slate-100 overflow-x-hidden">
       <Navbar />
 
-      {/* Page hero */}
-      <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3399FF]/10 via-transparent to-transparent pointer-events-none" />
-        <div className="container-padding relative z-10">
-          <motion.div
+      {/* 1. Hero — gradient, floating shapes, tagline */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A2540] via-[#1e3a5f] via-40% to-[#312e81] to-80%" />
+        <div className="about-hero-mesh absolute inset-0 opacity-40" />
+        <div className="absolute top-20 left-[10%] w-72 h-72 rounded-full bg-[#3399FF]/20 blur-[100px] animate-float" />
+        <div className="absolute bottom-32 right-[15%] w-96 h-96 rounded-full bg-[#8B5CF6]/15 blur-[120px] animate-float-delayed" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#3399FF]/10 blur-[150px]" />
+        {/* Floating tech icons in background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[Code2, Layers, Cpu, Cloud].map((Icon, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-white/5"
+              style={{
+                left: `${15 + i * 22}%`,
+                top: `${20 + (i % 3) * 25}%`,
+              }}
+              animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Icon className="h-16 w-16 md:h-24 md:w-24" />
+            </motion.div>
+          ))}
+        </div>
+        <div className="container-padding relative z-10 text-center max-w-4xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-[#3399FF] font-medium tracking-widest uppercase text-sm mb-4"
+          >
+            Who we are
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6"
+          >
+            About Converra
+          </motion.h1>
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            transition={{ delay: 0.5 }}
+            className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
           >
-            <p className="text-[#3399FF] font-medium tracking-wide mb-3">About us</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-              About Converra Growth Partners
-            </h1>
-            <p className="text-lg text-slate-300">
-              Your revenue-focused growth partner for ambitious businesses.
-            </p>
-          </motion.div>
+            Your revenue-focused growth partner. We help ambitious businesses scale through dedicated sales execution and measurable outcomes.
+          </motion.p>
         </div>
       </section>
 
-      {/* Who We Are */}
-      <section id="who-we-are" className="relative py-16 md:py-24">
-        <div className="container-padding">
+      {/* 2. Mission & Vision — split layout, glass cards, icons */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="container-padding max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
+            className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3399FF]/20 text-[#3399FF]">
-                <Users className="h-7 w-7" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Who We Are</h2>
-            </div>
-            <div className="rounded-2xl border border-sky-200/60 bg-gradient-to-br from-sky-50/90 via-white to-blue-50/70 p-8 md:p-10 text-slate-700 space-y-5">
-              <p className="text-base md:text-lg leading-relaxed">
-                Converra Growth Partners is a revenue-focused growth partner for ambitious businesses. We work alongside founders and leadership teams to strengthen sales execution and unlock new revenue opportunities without increasing operational complexity.
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Mission & Vision</h2>
+              <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                Converra operates as an extended revenue arm—we align with your goals, represent your product, and drive growth through dedicated sales execution without adding operational complexity.
               </p>
-              <p className="text-base md:text-lg leading-relaxed">
-                Our focus is simple: help companies expand their market reach, generate meaningful conversations with potential clients, and convert opportunities into measurable business outcomes.
-              </p>
-              <p className="text-base md:text-lg leading-relaxed">
-                Rather than functioning as a traditional sales outsourcing firm, Converra operates as an extended revenue arm that collaborates closely with internal teams to drive consistent pipeline movement and business growth.
+              <p className="text-slate-400 leading-relaxed">
+                When meaningful conversations happen consistently and pipeline movement is structured, revenue growth becomes predictable and scalable.
               </p>
             </div>
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {[
+                { icon: Lightbulb, label: "Innovation", desc: "New ways to grow revenue" },
+                { icon: Cpu, label: "Technology", desc: "Data-driven execution" },
+                { icon: TrendingUp, label: "Growth", desc: "Scalable outcomes" },
+                { icon: Shield, label: "Security", desc: "Trusted partnership" },
+              ].map(({ icon: Icon, label, desc }) => (
+                <motion.div
+                  key={label}
+                  variants={item}
+                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 hover:border-[#3399FF]/30 transition-all duration-300"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3399FF]/20 text-[#3399FF] mb-3">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-semibold text-white mb-1">{label}</h3>
+                  <p className="text-sm text-slate-400">{desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* What We Do */}
-      <section id="what-we-do" className="relative py-16 md:py-24 bg-gradient-to-b from-[#0A2540] via-[#0e2f55] to-[#0A2540]">
-        <div className="container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-5xl mx-auto"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3399FF]/20 text-[#3399FF]">
-                <Target className="h-7 w-7" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">What We Do</h2>
-            </div>
-            <div className="space-y-8">
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 text-slate-200 space-y-4">
-                <p className="text-base md:text-lg leading-relaxed">
-                  Many companies have strong products, capable teams, and active marketing efforts — yet revenue growth often remains inconsistent or non-scalable for longer periods.
-                </p>
-                <p className="text-base md:text-lg leading-relaxed">
-                  The reason is simple: revenue execution requires continuous focus, additional revenue flow, structured outreach, and disciplined pipeline ownership.
-                </p>
-                <p className="text-base md:text-lg leading-relaxed">
-                  Converra supports businesses by creating a dedicated revenue lane for their product or service. We allocate a product-focused sales professional or a small team that deeply understands your offering and represents it in the market. This dedicated resource operates as an extension of your business, engaging prospects, initiating conversations, and managing opportunities from outreach to revenue.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-sky-200/60 bg-gradient-to-br from-sky-50/90 via-white to-blue-50/70 p-6 md:p-8">
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">Our role includes:</h3>
-                <ul className="space-y-3">
-                  {[
-                    "Generating and identifying relevant prospects",
-                    "Representing your product with deep understanding",
-                    "Creating and managing a dedicated sales pipeline",
-                    "Driving consistent outreach and follow-ups",
-                    "Converting opportunities into measurable revenue",
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 items-start text-slate-700">
-                      <CheckCircle className="h-5 w-5 text-[#3399FF] shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-slate-600 mt-6 leading-relaxed">
-                  While your internal team continues to handle core relationships, product development, and strategic sales conversations, Converra ensures that new opportunities are continuously entering and moving through the pipeline. This structured approach allows businesses to expand their revenue capacity without constantly building or managing additional internal sales teams.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Our Approach */}
-      <section id="our-approach" className="relative py-16 md:py-24">
-        <div className="container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3399FF]/20 text-[#3399FF]">
-                <Compass className="h-7 w-7" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Our Approach</h2>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 text-slate-200 space-y-5">
-              <p className="text-base md:text-lg leading-relaxed">
-                At Converra, we believe revenue growth should not depend solely on internal bandwidth or continuous hiring cycles.
-              </p>
-              <p className="text-base md:text-lg leading-relaxed">
-                Our approach begins with deeply understanding your product, value proposition, and ideal customer profile. This allows us to represent your offering in the market with clarity and confidence.
-              </p>
-              <p className="text-base md:text-lg leading-relaxed">
-                Once aligned, Converra assigns a dedicated sales professional or team that focuses specifically on your product. These resources operate as an extension of your business, building product-level expertise and engaging the right prospects through structured outreach.
-              </p>
-              <p className="text-base md:text-lg leading-relaxed">
-                We then establish a separate and focused pipeline for your offering, where conversations, opportunities, and follow-ups are managed consistently to ensure momentum across the sales process.
-              </p>
-              <p className="text-base md:text-lg leading-relaxed">
-                While your internal team continues to manage strategic relationships and core deals, Converra focuses on expanding outreach, generating opportunities, and driving additional revenue conversations in parallel. This approach creates a structured and scalable revenue channel, enabling businesses to grow without constantly expanding their internal sales teams.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Converra */}
-      <section id="why-converra" className="relative py-16 md:py-24 bg-gradient-to-b from-[#0A2540] via-[#0e2f55] to-[#0A2540]">
-        <div className="container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3399FF]/20 text-[#3399FF]">
-                <Award className="h-7 w-7" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Why Converra Growth Partners</h2>
-            </div>
-            <div className="space-y-6">
-              <p className="text-slate-200 text-base md:text-lg leading-relaxed">
-                Businesses partner with Converra when they want to strengthen their revenue execution without constantly expanding their internal sales teams. Our model helps organizations create an additional revenue lane where dedicated sales professionals represent their product, initiate meaningful conversations, and manage opportunities through a structured pipeline.
-              </p>
-              <div className="rounded-2xl border border-sky-200/60 bg-gradient-to-br from-sky-50/90 via-white to-blue-50/70 p-6 md:p-8">
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">Companies work with Converra when they want to:</h3>
-                <ul className="space-y-3">
-                  {[
-                    "Expand their market outreach and prospect engagement",
-                    "Create a dedicated pipeline for new opportunities",
-                    "Introduce product-focused sales expertise without additional hiring cycles",
-                    "Strengthen consistency in outreach and follow-ups",
-                    "Generate additional revenue opportunities alongside their internal teams",
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 items-start text-slate-700">
-                      <CheckCircle className="h-5 w-5 text-[#3399FF] shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-slate-600 mt-6 leading-relaxed">
-                  By creating a focused and disciplined revenue channel, Converra enables businesses to scale their growth efforts while maintaining clarity and control over their core operations.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Our Philosophy */}
-      <section id="our-philosophy" className="relative py-16 md:py-24">
-        <div className="container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3399FF]/20 text-[#3399FF]">
-                <Lightbulb className="h-7 w-7" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Our Philosophy</h2>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 text-slate-200 space-y-5">
-              <p className="text-base md:text-lg leading-relaxed">
-                At Converra, we believe revenue growth is not simply about increasing activity — it is about creating the right structure for consistent execution.
-              </p>
-              <p className="text-base md:text-lg leading-relaxed">
-                Our philosophy is simple: when meaningful conversations happen consistently, opportunities are nurtured properly, and pipeline movement is structured, revenue growth becomes far more predictable and scalable.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Tagline & CTA */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#0A2540] via-[#0d2a4a] to-[#0A2540]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3399FF]/10 via-transparent to-[#0A2540]" aria-hidden />
-        <div className="container-padding relative z-10">
-          <motion.div
+      {/* 3. Company Stats — animated counters */}
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
+        <div className="container-padding max-w-6xl mx-auto">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center rounded-2xl border border-sky-200/60 bg-gradient-to-br from-sky-50/90 via-white to-blue-50/80 p-8 md:p-12"
+            className="text-3xl md:text-4xl font-bold text-white text-center mb-16"
           >
-            <div className="flex justify-center mb-6">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#3399FF]/20 text-[#3399FF]">
-                <MessageCircle className="h-8 w-8" />
+            Our impact in numbers
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {[
+              { icon: Rocket, value: 50, suffix: "+", label: "Projects Completed" },
+              { icon: Users, value: 120, suffix: "+", label: "Clients Served" },
+              { icon: Layers, value: 15, suffix: "+", label: "Technologies Used" },
+              { icon: Target, value: 12, suffix: "", label: "Countries Reached" },
+            ].map(({ icon: Icon, value, suffix, label }) => (
+              <motion.div
+                key={label}
+                whileHover={{ y: -4 }}
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 text-center hover:border-[#3399FF]/30 hover:shadow-[#3399FF]/10 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex justify-center mb-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3399FF]/20 text-[#3399FF]">
+                    <Icon className="h-7 w-7" />
+                  </div>
+                </div>
+                <div className="text-4xl md:text-5xl font-bold text-white tabular-nums">
+                  <AnimatedCounter value={value} suffix={suffix} duration={2} />
+                </div>
+                <p className="text-slate-400 font-medium mt-2 text-sm">{label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4. Timeline / Journey */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="container-padding max-w-5xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-white text-center mb-20"
+          >
+            Our journey
+          </motion.h2>
+          <div className="relative">
+            <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#3399FF]/50 to-transparent" />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="grid md:grid-cols-4 gap-8 md:gap-4"
+            >
+              {[
+                { year: "Start", title: "Company founded", icon: Sparkles },
+                { year: "Growth", title: "Major milestones", icon: TrendingUp },
+                { year: "Product", title: "Product launches", icon: Rocket },
+                { year: "Today", title: "Global reach", icon: Globe },
+              ].map(({ year, title, icon: Icon }, i) => (
+                <motion.div
+                  key={year}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="relative flex flex-col items-center text-center"
+                >
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-[#3399FF]/40 bg-[#0A2540] text-[#3399FF] mb-4 relative z-10">
+                    <Icon className="h-8 w-8" />
+                  </div>
+                  <span className="text-[#3399FF] font-semibold text-sm mb-1">{year}</span>
+                  <p className="text-white font-medium">{title}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Technology Stack — icon grid with hover glow */}
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
+        <div className="container-padding max-w-5xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-white text-center mb-16"
+          >
+            Technology & tools
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6"
+          >
+            {[
+              { icon: Layers, label: "React" },
+              { icon: Code2, label: "Next.js" },
+              { icon: Server, label: "Node.js" },
+              { icon: Terminal, label: "Python" },
+              { icon: Brain, label: "AI Tools" },
+              { icon: Cloud, label: "Cloud" },
+            ].map(({ icon: Icon, label }) => (
+              <motion.div
+                key={label}
+                whileHover={{ scale: 1.05 }}
+                className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-[#3399FF]/40 hover:shadow-[0_0_30px_rgba(51,153,255,0.2)] transition-all duration-300"
+              >
+                <Icon className="h-10 w-10 text-[#3399FF] mb-2" />
+                <span className="text-sm font-medium text-slate-300">{label}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 6. Process Infographic — Idea → Design → Development → Launch */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="container-padding max-w-5xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-white text-center mb-20"
+          >
+            How we work
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4"
+          >
+            {[
+              { icon: Lightbulb, label: "Idea" },
+              { icon: Palette, label: "Design" },
+              { icon: Terminal, label: "Development" },
+              { icon: Rocket, label: "Launch" },
+            ].map((step, i) => {
+              const StepIcon = step.icon;
+              return (
+              <div key={step.label} className="flex flex-col md:flex-row items-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className="flex flex-col items-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 w-full md:w-auto hover:border-[#3399FF]/30 transition-all duration-300"
+                >
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#3399FF]/20 text-[#3399FF] mb-3">
+                    <StepIcon className="h-7 w-7" />
+                  </div>
+                  <span className="font-semibold text-white">{step.label}</span>
+                </motion.div>
+                {i < 3 && (
+                  <div className="hidden md:flex flex-1 items-center justify-center py-4">
+                    <ArrowRight className="h-6 w-6 text-[#3399FF]/60" />
+                  </div>
+                )}
               </div>
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-              Our Tagline
-            </h2>
-            <p className="text-xl md:text-2xl font-semibold text-[#0A2540] mb-4">
-              Conversation. Conviction. Conversion.
-            </p>
-            <p className="text-slate-600 leading-relaxed mb-8">
-              At Converra, growth begins with meaningful conversations, builds through conviction, and ultimately delivers measurable conversion.
-            </p>
+            );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 7. Team — cards with placeholder, name, role, social */}
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#0A2540] via-[#0f2744] to-[#0A2540]">
+        <div className="container-padding max-w-5xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-white text-center mb-4"
+          >
+            The team
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-slate-400 text-center mb-16 max-w-xl mx-auto"
+          >
+            People behind Converra’s growth partnership model.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {[
+              { name: "Leadership", role: "Strategy & growth" },
+              { name: "Revenue team", role: "Sales execution" },
+              { name: "Operations", role: "Pipeline & delivery" },
+              { name: "Partnerships", role: "Client success" },
+            ].map((member) => (
+              <motion.div
+                key={member.name}
+                whileHover={{ y: -6 }}
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center hover:border-[#3399FF]/30 hover:shadow-xl hover:shadow-[#3399FF]/10 transition-all duration-300"
+              >
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#3399FF]/30 to-[#8B5CF6]/30 mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">
+                  {member.name.charAt(0)}
+                </div>
+                <h3 className="font-semibold text-white mb-1">{member.name}</h3>
+                <p className="text-sm text-slate-400 mb-4">{member.role}</p>
+                <div className="flex justify-center gap-3">
+                  <a href="#" className="text-slate-400 hover:text-[#3399FF] transition-colors" aria-label="LinkedIn">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a href="#" className="text-slate-400 hover:text-[#3399FF] transition-colors" aria-label="Twitter">
+                    <Twitter className="h-5 w-5" />
+                  </a>
+                  <a href="#" className="text-slate-400 hover:text-[#3399FF] transition-colors" aria-label="Email">
+                    <Mail className="h-5 w-5" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 8. CTA — gradient, primary message, button */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3399FF]/20 via-[#8B5CF6]/20 to-[#3399FF]/20" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#8B5CF6]/20 rounded-full blur-[120px]" />
+        <div className="container-padding relative z-10 max-w-3xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+          >
+            Build your next digital experience with Converra
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-slate-300 text-lg mb-10"
+          >
+            Start your project with a revenue partner that scales with you.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <Button
               onClick={() => openBookStrategyCall(scrollToContact)}
-              className="bg-[#3399FF] hover:bg-[#1f7fe6] text-white font-semibold shadow-lg shadow-[#3399FF]/30"
+              className="h-14 px-10 text-lg font-semibold bg-[#3399FF] hover:bg-[#1f7fe6] text-white shadow-lg shadow-[#3399FF]/30 hover:shadow-[#3399FF]/50 transition-all duration-300 rounded-xl"
             >
-              Book a Strategy Call
-              <ArrowRight className="ml-2 h-4 w-4" />
+              Start your project
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer id="footer-contact" className="bg-[#071c33] border-t border-white/10 py-12 text-slate-400">
+      <footer id="footer-contact" className="bg-[#071c33] border-t border-white/10 py-12">
         <div className="container-padding">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
@@ -284,11 +430,11 @@ export default function About() {
               <span className="text-lg font-bold text-white uppercase tracking-tight">Converra</span>
             </div>
             <Link href="/" className="text-slate-400 hover:text-[#3399FF] transition-colors text-sm">
-              Back to Home
+              Back to home
             </Link>
           </div>
           <div className="pt-6 mt-6 border-t border-white/10 text-center text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Converra Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} Converra Growth Partners. All rights reserved.
           </div>
         </div>
       </footer>

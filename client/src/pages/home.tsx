@@ -797,7 +797,7 @@ export default function Home() {
 
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-slate-500">
-              &copy; {new Date().getFullYear()} Converra Inc. All rights reserved.
+              &copy; {new Date().getFullYear()} Converra Growth Partners. All rights reserved.
             </div>
             <div className="flex items-center gap-6">
               <a
