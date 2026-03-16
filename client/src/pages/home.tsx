@@ -80,7 +80,7 @@ export default function Home() {
               </h1>
 
               <p className="text-lg md:text-xl text-slate-300/95 leading-relaxed mb-10">
-                We help SaaS and technology businesses turn warm leads into predictable revenue through dedicated sales execution aligned with business outcomes.
+                We help SaaS and technology businesses turn leads into predictable revenue through dedicated sales execution aligned with business outcomes.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -88,7 +88,7 @@ export default function Home() {
                   onClick={() => openBookStrategyCall(() => scrollTo("footer-contact"))}
                   className="h-12 px-8 text-base bg-[#3399FF] hover:bg-[#1f7fe6] text-white font-semibold shadow-xl shadow-[#3399FF]/35 hover:shadow-[#1f7fe6]/55 transition-all duration-300"
                 >
-                  Get Started
+                  Schedule a Call
                 </Button>
                 <Button
                   variant="outline"
