@@ -72,7 +72,7 @@ export default function Home() {
               </p>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-200 backdrop-blur-sm mb-6">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                Accepting New Partners for Q4
+                Accepting New Partners for Q2
               </div>
 
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white mb-6 drop-shadow-sm">
